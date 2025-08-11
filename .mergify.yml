@@ -6,4 +6,4 @@ pull_request_rules:
       - label=docker
     actions:
       merge:
-        method: merge
+        method: rebase
