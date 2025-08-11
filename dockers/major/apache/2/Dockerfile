@@ -1,1 +1,1 @@
-FROM httpd:2
+FROM httpd:2@sha256:fbc12199ccad031d8047e9c789d65aceee2d14f99ba90664cd3a3996867a5582
