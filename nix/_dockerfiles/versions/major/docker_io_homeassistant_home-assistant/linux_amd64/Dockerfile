@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 docker.io/homeassistant/home-assistant
+FROM --platform=linux/amd64 docker.io/homeassistant/home-assistant:0
