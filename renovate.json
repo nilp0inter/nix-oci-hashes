@@ -1,45 +1,79 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "docker": {
-    "enabled": true,
-    "pinDigests": true
-  },
   "dockerfile": {
-    "fileMatch": ["(^|/)Dockerfile$"]
+    "managerFilePatterns": [
+      "/(^|/)Dockerfile$/"
+    ]
   },
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["**/dockers/**/[0-9]/Dockerfile"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchCategories": [
+        "docker"
+      ],
+      "enabled": true,
+      "pinDigests": true
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "**/dockers/**/[0-9]/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "enabled": true
     },
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["**/dockers/**/[0-9].[0-9]*/Dockerfile"],
-      "matchUpdateTypes": ["patch"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "**/dockers/**/[0-9].[0-9]*/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "enabled": true
     },
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["**/dockers/**/[0-9]/Dockerfile"],
-      "matchUpdateTypes": ["major"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "**/dockers/**/[0-9]/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false
     },
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["**/dockers/**/[0-9].[0-9]*/Dockerfile"],
-      "matchUpdateTypes": ["major", "minor"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "**/dockers/**/[0-9].[0-9]*/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
       "enabled": false
     }
   ],
   "prConcurrentLimit": 10,
   "prCreation": "immediate",
   "automerge": false,
-  "labels": ["dependencies", "docker"],
+  "labels": [
+    "dependencies",
+    "docker"
+  ],
   "commitMessagePrefix": "chore(docker): ",
   "commitMessageTopic": "{{depName}}",
   "commitMessageExtra": "to {{newVersion}}"
