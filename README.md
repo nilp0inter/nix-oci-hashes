@@ -97,44 +97,17 @@ Currently available images include:
 
 ## Repository Structure
 
-```
-dockers/
-├── major/          # Software using major version only (e.g., postgres:16)
-│   ├── postgres/
-│   │   ├── 14/Dockerfile
-│   │   ├── 15/Dockerfile
-│   │   └── 16/Dockerfile
-│   └── redis/
-│       ├── 6/Dockerfile
-│       └── 7/Dockerfile
-└── major-minor/    # Software using major.minor versions (e.g., python:3.12)
-    ├── python/
-    │   ├── 3.9/Dockerfile
-    │   ├── 3.10/Dockerfile
-    │   ├── 3.11/Dockerfile
-    │   └── 3.12/Dockerfile
-    └── nginx/
-        ├── 1.24/Dockerfile
-        ├── 1.25/Dockerfile
-        └── 1.26/Dockerfile
-```
+TODO
 
 ## Contributing
 
 ### Adding New Software
 
 1. **Determine version strategy**:
-   - Use `major/` for software that typically uses major versions only (e.g., `postgres:16`)
-   - Use `major-minor/` for software that uses major.minor versions (e.g., `python:3.12`)
+   TODO
 
 2. **Create the directory structure**:
-   ```bash
-   # For major-only versioning
-   mkdir -p dockers/major/SOFTWARE_NAME/VERSION
-   
-   # For major-minor versioning
-   mkdir -p dockers/major-minor/SOFTWARE_NAME/VERSION
-   ```
+   TODO
 
 3. **Add the Dockerfile**:
    ```dockerfile
@@ -142,50 +115,20 @@ dockers/
    ```
    
    Example for PostgreSQL 17:
-   ```bash
-   mkdir -p dockers/major/postgres/17
-   echo "FROM postgres:17" > dockers/major/postgres/17/Dockerfile
-   ```
+   TODO
 
 4. **Submit a pull request**. Renovate will automatically:
    - Add the SHA256 digest to the image reference
    - Keep it updated with new releases
    - Respect the version constraints based on directory placement
 
-### Adding New Version Strategies
-
-If you need a different update strategy (e.g., following release channels like `stable`/`edge`):
-
-1. Create a new top-level directory under `dockers/` (e.g., `dockers/channels/`)
-2. Update `renovate.json` to add appropriate rules:
-   ```json
-   {
-     "matchFiles": ["dockers/channels/**/Dockerfile"],
-     "matchUpdateTypes": ["patch", "minor", "major"],
-     "enabled": true
-   }
-   ```
-3. Submit a pull request with your changes
-
-### Custom Registry Support
-
-For images from registries other than Docker Hub:
-
-```dockerfile
-FROM ghcr.io/owner/image:tag
-FROM quay.io/owner/image:tag
-FROM registry.gitlab.com/owner/image:tag
-```
-
-The full registry path will be preserved in the output.
 
 ## How It Works
 
 1. **Dockerfiles**: Each Dockerfile contains a single `FROM` line with the image reference
 2. **Renovate Bot**: Monitors all Dockerfiles and creates PRs to update image digests
 3. **Version Constraints**: 
-   - Images in `major/` only receive minor and patch updates
-   - Images in `major-minor/` only receive patch updates
+   TODO
 4. **Mergify**: Automatically merges Renovate PRs after checks pass
 5. **Nix Flake**: Parses all Dockerfiles at evaluation time and exposes image references
 6. **Git History**: Every update is a commit, providing a complete audit trail

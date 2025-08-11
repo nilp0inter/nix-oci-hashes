@@ -1,0 +1,42 @@
+[
+  {
+    "image": "docker.io/homeassistant/home-assistant",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/plexinc/pms-docker",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/blakeblackshear/frigate",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/gitlab/gitlab-ce",
+    "platforms": ["linux/amd64"]
+  },
+  {
+    "image": "docker.io/nextcloud",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "ghcr.io/paperless-ngx/paperless-ngx",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/matrixdotorg/synapse",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/authelia/authelia",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/vaultwarden/server",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  },
+  {
+    "image": "docker.io/jboss/keycloak",
+    "platforms": ["linux/amd64", "linux/arm64"]
+  }
+]

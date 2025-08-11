@@ -10,60 +10,41 @@
   },
   "packageRules": [
     {
-      "matchCategories": [
-        "docker"
-      ],
-      "pinDigests": true
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchFileNames": [
-        "dockers/major/**/Dockerfile"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "enabled": true
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchFileNames": [
-        "dockers/major-minor/**/Dockerfile"
-      ],
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "enabled": true
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchFileNames": [
-        "dockers/major/**/Dockerfile"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
+      "description": "For pins: Enable digest pinning and disable tag updates",
+      "matchFileNames": ["nix/_dockerfiles/pins/**"],
+      "matchManagers": ["dockerfile"],
+      "pinDigests": true,
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "enabled": false
     },
     {
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchFileNames": [
-        "dockers/major-minor/**/Dockerfile"
-      ],
-      "matchUpdateTypes": [
-        "major",
-        "minor"
-      ],
+      "description": "For all in 'versions/': Disable digests completely",
+      "matchFileNames": ["nix/_dockerfiles/versions/**"],
+      "matchManagers": ["dockerfile"],
+      "pinDigests": false,
+      "matchUpdateTypes": ["digest", "pinDigest"],
       "enabled": false
+    },
+    {
+      "description": "For 'major/': Only allow major version updates",
+      "matchFileNames": ["nix/_dockerfiles/versions/major/**"],
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "enabled": false
+    },
+    {
+      "description": "For 'major-minor/': Allow major and minor updates only",
+      "matchFileNames": ["nix/_dockerfiles/versions/major-minor/**"],
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["patch"],
+      "enabled": false
+    },
+    {
+      "description": "For 'major-minor-patch/': Allow all updates",
+      "matchFileNames": ["nix/_dockerfiles/versions/major-minor-patch/**"],
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": [],
+      "enabled": true
     }
   ],
   "prConcurrentLimit": 10,
