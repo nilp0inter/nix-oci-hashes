@@ -1,0 +1,50 @@
+name: Collect Digests and Update digests.json
+
+on:
+  push:
+    paths:
+      - 'nix/_dockerfiles/pins/**'
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      
+      - name: Collect digests and generate digests.json
+        run: |
+          nix run .#collect-digests
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git diff --name-only digests.json) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add digests.json
+          git commit -m "chore: update digests.json with latest image references"
+          git push

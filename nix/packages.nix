@@ -13,11 +13,17 @@
         flakeIgnore = [ "E501" "E265" ];
       } (builtins.readFile ./scripts/harvest-tags.py);
 
+      collect-digests = pkgs.writers.writePython3Bin "collect-digests" {
+        libraries = [ ];
+        flakeIgnore = [ "E501" "E265" ];
+      } (builtins.readFile ./scripts/collect-digests.py);
+
       ci-env = pkgs.buildEnv {
         name = "nix-oci-hashes-ci-env";
         paths = with pkgs; [
           config.packages.generate-version-dockerfiles
           config.packages.harvest-tags
+          config.packages.collect-digests
           git
           jq
         ];
@@ -28,6 +34,7 @@
       buildInputs = with pkgs; [
         config.packages.generate-version-dockerfiles
         config.packages.harvest-tags
+        config.packages.collect-digests
         python3
         python3Packages.pyyaml
         git
