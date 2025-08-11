@@ -3,11 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "dockerfile": {
-    "managerFilePatterns": [
-      "/(^|/)Dockerfile$/"
-    ]
-  },
   "packageRules": [
     {
       "description": "For pins: Enable digest pinning and disable tag updates",
