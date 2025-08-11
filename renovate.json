@@ -68,7 +68,8 @@
   ],
   "prConcurrentLimit": 10,
   "prCreation": "immediate",
-  "automerge": false,
+  "automerge": true,
+  "automergeType": "branch",
   "labels": [
     "dependencies",
     "docker"
