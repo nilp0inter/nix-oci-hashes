@@ -5,12 +5,6 @@
   ],
   "packageRules": [
     {
-      "description": "For all in 'versions/': Use Semantic Versioning to understand major/minor/patch",
-      "matchFileNames": ["nix/_dockerfiles/versions/**"],
-      "matchManagers": ["dockerfile"],
-      "versioning": "semver"
-    },
-    {
       "description": "For pins: Enable digest pinning and disable tag updates",
       "matchFileNames": ["nix/_dockerfiles/pins/**"],
       "matchManagers": ["dockerfile"],
@@ -39,13 +33,6 @@
       "matchManagers": ["dockerfile"],
       "matchUpdateTypes": ["patch"],
       "enabled": false
-    },
-    {
-      "description": "For 'major-minor-patch/': Allow all updates",
-      "matchFileNames": ["nix/_dockerfiles/versions/major-minor-patch/**"],
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": [],
-      "enabled": true
     }
   ],
   "prConcurrentLimit": 10,
