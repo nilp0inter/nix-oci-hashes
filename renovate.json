@@ -5,10 +5,15 @@
   ],
   "packageRules": [
     {
-      "description": "For pins: Enable digest pinning and disable tag updates",
+      "description": "For pins: ALWAYS enable digest pinning for all images",
       "matchFileNames": ["nix/_dockerfiles/pins/**"],
       "matchManagers": ["dockerfile"],
-      "pinDigests": true,
+      "pinDigests": true
+    },
+    {
+      "description": "For pins: Disable all tag updates (major, minor, patch)",
+      "matchFileNames": ["nix/_dockerfiles/pins/**"],
+      "matchManagers": ["dockerfile"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "enabled": false
     },
