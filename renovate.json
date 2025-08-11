@@ -5,6 +5,12 @@
   ],
   "packageRules": [
     {
+      "description": "For all in 'versions/': Use Semantic Versioning to understand major/minor/patch",
+      "matchFileNames": ["nix/_dockerfiles/versions/**"],
+      "matchManagers": ["dockerfile"],
+      "versioning": "semver"
+    },
+    {
       "description": "For pins: Enable digest pinning and disable tag updates",
       "matchFileNames": ["nix/_dockerfiles/pins/**"],
       "matchManagers": ["dockerfile"],

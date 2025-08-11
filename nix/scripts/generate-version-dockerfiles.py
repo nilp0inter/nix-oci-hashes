@@ -14,7 +14,7 @@ def sanitize_image_name(image):
 
 def create_dockerfile(image, platform, version_dir):
     """Create a Dockerfile with FROM directive"""
-    dockerfile_content = f"FROM --platform={platform} {image}:latest\n"
+    dockerfile_content = f"FROM --platform={platform} {image}\n"
     return dockerfile_content
 
 
