@@ -69,10 +69,7 @@
   "prConcurrentLimit": 10,
   "prCreation": "immediate",
   "autoApprove": true,
-  "automerge": true,
-  "automergeStrategy": "rebase",
-  "automergeType": "pr",
-  "platformAutomerge": true,
+  "automerge": false,
   "labels": [
     "dependencies",
     "docker"
