@@ -1,7 +1,7 @@
 pull_request_rules:
   - name: Auto-merge Renovate Docker updates
     conditions:
-      - author=renovate[bot]
+      - author=app/renovate
       - label=dependencies
       - label=docker
     actions:
