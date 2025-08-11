@@ -3,9 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "docker": {
-    "pinDigests": true
-  },
   "dockerfile": {
     "managerFilePatterns": [
       "/(^|/)Dockerfile$/"
@@ -13,27 +10,59 @@
   },
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["dockers/major/**/Dockerfile"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchCategories": [
+        "docker"
+      ],
+      "pinDigests": true
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "dockers/major/**/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "enabled": true
     },
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["dockers/major-minor/**/Dockerfile"],
-      "matchUpdateTypes": ["patch"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "dockers/major-minor/**/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "enabled": true
     },
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["dockers/major/**/Dockerfile"],
-      "matchUpdateTypes": ["major"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "dockers/major/**/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false
     },
     {
-      "matchDatasources": ["docker"],
-      "matchFiles": ["dockers/major-minor/**/Dockerfile"],
-      "matchUpdateTypes": ["major", "minor"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "dockers/major-minor/**/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
       "enabled": false
     }
   ],
