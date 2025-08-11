@@ -1,1 +1,1 @@
-FROM mongo:6
+FROM mongo:6@sha256:e6ea23317a13da9c83b5adae237c85ecd93a7079bb41997d409484ed7b5677bb
