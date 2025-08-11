@@ -13,8 +13,27 @@
   "packageRules": [
     {
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchFiles": ["**/dockers/**/[0-9]/Dockerfile"],
+      "matchUpdateTypes": ["minor", "patch"],
       "enabled": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchFiles": ["**/dockers/**/[0-9].[0-9]*/Dockerfile"],
+      "matchUpdateTypes": ["patch"],
+      "enabled": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchFiles": ["**/dockers/**/[0-9]/Dockerfile"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchFiles": ["**/dockers/**/[0-9].[0-9]*/Dockerfile"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
     }
   ],
   "prConcurrentLimit": 10,
