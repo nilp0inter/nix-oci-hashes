@@ -68,12 +68,17 @@
   ],
   "prConcurrentLimit": 10,
   "prCreation": "immediate",
-  "automerge": false,
+  "autoApprove": true,
+  "automerge": true,
+  "automergeStrategy": "rebase",
+  "automergeType": "pr",
+  "platformAutomerge": true,
   "labels": [
     "dependencies",
     "docker"
   ],
   "commitMessagePrefix": "chore(docker): ",
   "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": "to {{newVersion}}"
+  "commitMessageExtra": "to {{newVersion}}",
+  "configMigration": true
 }

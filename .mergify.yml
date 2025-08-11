@@ -1,9 +1,9 @@
-pull_request_rules:
-  - name: Auto-merge Renovate Docker updates
-    conditions:
-      - author~=^renovate
-      - label=dependencies
-      - label=docker
-    actions:
-      merge:
-        method: rebase
+# pull_request_rules:
+#   - name: Auto-merge Renovate Docker updates
+#     conditions:
+#       - author~=^renovate
+#       - label=dependencies
+#       - label=docker
+#     actions:
+#       merge:
+#         method: rebase
