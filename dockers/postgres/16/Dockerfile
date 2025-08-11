@@ -1,1 +1,1 @@
-FROM postgres:16
+FROM postgres:16@sha256:fec2740c517838d4f582e48a8a9a1cb51082af3dcae59e9b12a66ec262302b97

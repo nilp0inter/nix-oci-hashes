@@ -1,1 +1,1 @@
-FROM jenkins/jenkins:2.426
+FROM jenkins/jenkins:2.426@sha256:9a170eb30e6ce3efc1a4b4605247f89652aa1833c5d2f03efae8557c4e3f1587
