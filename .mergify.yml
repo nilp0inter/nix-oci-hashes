@@ -1,4 +1,28 @@
+priority_rules:
+  - name: OCI digest updates
+    priority: high
+    conditions:
+      - label=update
+      - label=digests
+  - name: Renovate updates
+    priority: medium
+    conditions:
+      - author~=^renovate
+
+queue_rules:
+  - name: default
+    merge_method: squash
+
 pull_request_rules:
+  - name: Auto-merge OCI digest updates
+    conditions:
+      - label=update
+      - label=digests
+      - "#approved-reviews-by>=0"  # No approval required for automated updates
+    actions:
+      queue:
+        name: default
+
   - name: Auto-merge Renovate Docker updates
     conditions:
       - author~=^renovate
