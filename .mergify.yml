@@ -27,6 +27,9 @@ priority_rules:
 
 queue_rules:
   - name: default
+    merge_method: rebase
+  
+  - name: squash-queue
     merge_method: squash
     commit_message_template: |
       {{ title }} (#{{ number }})
@@ -34,9 +37,6 @@ queue_rules:
 
       {{ body }}
       {% endif %}
-  
-  - name: rebase-queue
-    merge_method: rebase
 
 pull_request_rules:
   - name: Auto-merge OCI workflow updates
@@ -46,7 +46,9 @@ pull_request_rules:
       - "#approved-reviews-by>=0"  # No approval required for automated updates
     actions:
       queue:
-        name: rebase-queue  # Keep multiple commits for transparency
+        name: default  # Rebase - keep multiple commits for transparency
+      delete_head_branch:
+        force: true  # Delete the branch after merge
 
   - name: Auto-merge Renovate digest updates
     conditions:
@@ -56,7 +58,8 @@ pull_request_rules:
       - label=digest-update
     actions:
       queue:
-        name: default  # Squash - many small digest updates
+        name: default  # Rebase - preserve individual commits
+      delete_head_branch:  # Delete the branch after merge
 
   - name: Auto-merge Renovate tag updates
     conditions:
@@ -66,7 +69,8 @@ pull_request_rules:
       - label=tag-update
     actions:
       queue:
-        name: default  # Squash - one commit per tag update
+        name: default  # Rebase - preserve individual commits
+      delete_head_branch:  # Delete the branch after merge
 
   - name: Auto-merge GitHub Actions updates
     conditions:
@@ -75,7 +79,8 @@ pull_request_rules:
       - label=github-actions
     actions:
       queue:
-        name: default  # Squash - clean single commit
+        name: default  # Rebase - preserve individual commits
+      delete_head_branch:  # Delete the branch after merge
 
   - name: Auto-merge Nix flake updates
     conditions:
@@ -84,4 +89,5 @@ pull_request_rules:
       - label=nix-flake
     actions:
       queue:
-        name: default  # Squash - clean single commit
+        name: default  # Rebase - preserve individual commits
+      delete_head_branch:  # Delete the branch after merge

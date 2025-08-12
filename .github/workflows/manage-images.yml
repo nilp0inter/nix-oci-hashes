@@ -139,17 +139,31 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PR_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          # Create a unique branch name
-          BRANCH_NAME="update-oci-images-$(date +%Y%m%d-%H%M%S)"
+          # Always use the same branch name
+          BRANCH_NAME="update-oci-images"
           
-          # Create and push the branch
-          git checkout -b "$BRANCH_NAME"
-          git push origin "$BRANCH_NAME"
+          # Check if the branch already exists on remote
+          if git ls-remote --heads origin "$BRANCH_NAME" | grep -q "$BRANCH_NAME"; then
+            echo "Branch $BRANCH_NAME already exists on remote, fetching and resetting..."
+            git fetch origin "$BRANCH_NAME"
+            git checkout -B "$BRANCH_NAME"
+          else
+            echo "Creating new branch $BRANCH_NAME"
+            git checkout -b "$BRANCH_NAME"
+          fi
           
-          # Create the PR using GitHub CLI
-          gh pr create \
-            --title "chore: update OCI image references" \
-            --body "## Automated OCI Image Update
+          # Force push the branch (overwrites any existing branch)
+          git push --force origin "$BRANCH_NAME"
+          
+          # Check if a PR already exists for this branch
+          PR_EXISTS=$(gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number' || echo "")
+          
+          if [[ -n "$PR_EXISTS" ]]; then
+            echo "PR #$PR_EXISTS already exists, updating it..."
+            # Update the existing PR
+            gh pr edit "$PR_EXISTS" \
+              --title "chore: update OCI image references" \
+              --body "## Automated OCI Image Update
             
             This PR contains automated updates to OCI image references:
             
@@ -163,8 +177,29 @@ jobs:
             $(git log --oneline origin/main..HEAD)
             \`\`\`
             
-            This PR will be automatically merged by Mergify if all checks pass." \
-            --label "update" \
-            --label "digests" \
-            --base main \
-            --head "$BRANCH_NAME"
+            This PR will be automatically merged by Mergify if all checks pass."
+          else
+            echo "Creating new PR..."
+            # Create a new PR
+            gh pr create \
+              --title "chore: update OCI image references" \
+              --body "## Automated OCI Image Update
+              
+              This PR contains automated updates to OCI image references:
+              
+              - Version Dockerfiles generated from \`images.json\`
+              - Pin Dockerfiles created from version tags
+              - Updated \`digests.json\` with latest image references
+              
+              ### Commits
+              
+              \`\`\`
+              $(git log --oneline origin/main..HEAD)
+              \`\`\`
+              
+              This PR will be automatically merged by Mergify if all checks pass." \
+              --label "update" \
+              --label "digests" \
+              --base main \
+              --head "$BRANCH_NAME"
+          fi
