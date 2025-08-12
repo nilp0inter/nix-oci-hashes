@@ -40,7 +40,8 @@
       "enabled": false
     }
   ],
-  "prConcurrentLimit": 10,
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
   "prCreation": "immediate",
   "autoApprove": true,
   "automerge": false,
