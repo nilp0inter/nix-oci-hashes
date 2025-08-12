@@ -36,7 +36,8 @@ jobs:
         id: check_changes
         run: |
           git add -A nix/_dockerfiles/versions/
-          if [[ -n $(git status --porcelain nix/_dockerfiles/versions/) ]]; then
+          git add -A nix/_dockerfiles/pins/
+          if [[ -n $(git status --porcelain nix/_dockerfiles/) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT
