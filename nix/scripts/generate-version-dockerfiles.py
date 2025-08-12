@@ -2,7 +2,6 @@
 
 import json
 import sys
-import shutil
 from pathlib import Path
 
 
@@ -12,42 +11,79 @@ def sanitize_image_name(image):
     return image.replace('/', '_').replace(':', '_').replace('.', '_')
 
 
-def create_dockerfile(image, platform, version_dir):
-    """Create a Dockerfile with FROM directive"""
-    dockerfile_content = f"FROM --platform={platform} {image}\n"
+def sanitize_tag(tag):
+    """Convert tag to filesystem-safe format"""
+    return tag.replace('.', '_').replace('/', '_')
+
+
+def create_dockerfile_with_tag(image, platform, tag):
+    """Create a Dockerfile with FROM directive and specific tag"""
+    dockerfile_content = f"FROM --platform={platform} {image}:{tag}\n"
     return dockerfile_content
 
 
-def get_expected_paths(images):
-    """Get all expected Dockerfile paths based on images.json"""
+def get_expected_version_paths(images):
+    """Get all expected version Dockerfile paths based on images.json"""
     expected = set()
-    version_strategies = ["major", "major-minor", "major-minor-patch"]
 
     for item in images:
         image = item["image"]
         platforms = item["platforms"]
         safe_image_name = sanitize_image_name(image)
 
-        for strategy in version_strategies:
-            for platform in platforms:
-                safe_platform = platform.replace('/', '_')
-                dockerfile_path = Path(f"nix/_dockerfiles/versions/{strategy}/{safe_image_name}/{safe_platform}/Dockerfile")
-                expected.add(dockerfile_path)
+        # Check each version strategy
+        strategies = {
+            "major": item.get("initialMajor", []),
+            "major-minor": item.get("initialMajorMinor", []),
+            "major-minor-patch": item.get("initialMajorMinorPatch", [])
+        }
+
+        for strategy, tags in strategies.items():
+            # Only create if there are initial tags
+            if tags:
+                for platform in platforms:
+                    safe_platform = platform.replace('/', '_')
+                    dockerfile_path = Path(f"nix/_dockerfiles/versions/{strategy}/{safe_image_name}/{safe_platform}/Dockerfile")
+                    expected.add(dockerfile_path)
 
     return expected
 
 
-def get_existing_version_dockerfiles():
-    """Get all existing Dockerfiles in versions directory"""
-    versions_dir = Path("nix/_dockerfiles/versions")
-    if not versions_dir.exists():
+def get_expected_pin_paths(images):
+    """Get all expected pin Dockerfile paths based on images.json"""
+    expected = set()
+
+    for item in images:
+        image = item["image"]
+        platforms = item["platforms"]
+        safe_image_name = sanitize_image_name(image)
+
+        # Collect all tags from all strategies
+        all_tags = []
+        all_tags.extend(item.get("initialMajor", []))
+        all_tags.extend(item.get("initialMajorMinor", []))
+        all_tags.extend(item.get("initialMajorMinorPatch", []))
+
+        # Create pin paths for all tags
+        for tag in all_tags:
+            safe_tag = sanitize_tag(tag)
+            for platform in platforms:
+                safe_platform = platform.replace('/', '_')
+                pin_path = Path(f"nix/_dockerfiles/pins/{safe_image_name}/{safe_platform}/{safe_tag}/Dockerfile")
+                expected.add(pin_path)
+
+    return expected
+
+
+def get_existing_dockerfiles(base_dir):
+    """Get all existing Dockerfiles in a directory"""
+    if not base_dir.exists():
         return set()
+    return set(base_dir.rglob("Dockerfile"))
 
-    return set(versions_dir.rglob("Dockerfile"))
 
-
-def remove_orphaned_dockerfiles(expected_paths, existing_paths):
-    """Remove Dockerfiles that are no longer in images.json"""
+def remove_orphaned_dockerfiles(expected_paths, existing_paths, base_dir):
+    """Remove Dockerfiles that are no longer expected"""
     removed_files = []
     orphaned = existing_paths - expected_paths
 
@@ -59,7 +95,7 @@ def remove_orphaned_dockerfiles(expected_paths, existing_paths):
 
         # Clean up empty directories
         parent = dockerfile_path.parent
-        while parent != Path("nix/_dockerfiles/versions") and parent.exists():
+        while parent != base_dir and parent.exists():
             try:
                 # Only remove if directory is empty
                 parent.rmdir()
@@ -72,31 +108,6 @@ def remove_orphaned_dockerfiles(expected_paths, existing_paths):
     return removed_files
 
 
-def remove_orphaned_pins(images):
-    """Remove pin Dockerfiles for images no longer in images.json"""
-    pins_dir = Path("nix/_dockerfiles/pins")
-    if not pins_dir.exists():
-        return []
-
-    # Get all valid image names from images.json
-    valid_images = set()
-    for item in images:
-        safe_image_name = sanitize_image_name(item["image"])
-        valid_images.add(safe_image_name)
-
-    removed_pins = []
-
-    # Check each image directory in pins
-    for image_dir in pins_dir.iterdir():
-        if image_dir.is_dir() and image_dir.name not in valid_images:
-            # This image is no longer in images.json, remove entire directory
-            shutil.rmtree(image_dir)
-            removed_pins.append(str(image_dir))
-            print(f"Removed pin directory: {image_dir}")
-
-    return removed_pins
-
-
 def main():
     # Read images.json
     images_file = Path("images.json")
@@ -107,52 +118,90 @@ def main():
     with open(images_file) as f:
         images = json.load(f)
 
-    # Get expected and existing paths
-    expected_paths = get_expected_paths(images)
-    existing_paths = get_existing_version_dockerfiles()
+    # Get expected and existing paths for versions
+    versions_dir = Path("nix/_dockerfiles/versions")
+    expected_version_paths = get_expected_version_paths(images)
+    existing_version_paths = get_existing_dockerfiles(versions_dir)
+
+    # Get expected and existing paths for pins
+    pins_dir = Path("nix/_dockerfiles/pins")
+    expected_pin_paths = get_expected_pin_paths(images)
+    existing_pin_paths = get_existing_dockerfiles(pins_dir)
 
     # Remove orphaned files first
-    removed_files = remove_orphaned_dockerfiles(expected_paths, existing_paths)
-    removed_pins = remove_orphaned_pins(images)
+    removed_version_files = remove_orphaned_dockerfiles(expected_version_paths, existing_version_paths, versions_dir)
+    removed_pin_files = remove_orphaned_dockerfiles(expected_pin_paths, existing_pin_paths, pins_dir)
 
-    # Version strategies to check
-    version_strategies = ["major", "major-minor", "major-minor-patch"]
-
-    created_files = []
+    created_version_files = []
+    created_pin_files = []
 
     for item in images:
         image = item["image"]
         platforms = item["platforms"]
-
-        # Sanitize image name for directory
         safe_image_name = sanitize_image_name(image)
 
-        for strategy in version_strategies:
+        # Process version Dockerfiles
+        strategies = {
+            "major": item.get("initialMajor", []),
+            "major-minor": item.get("initialMajorMinor", []),
+            "major-minor-patch": item.get("initialMajorMinorPatch", [])
+        }
+
+        for strategy, tags in strategies.items():
+            if tags:  # Only create if there are initial tags
+                # Use the first tag for the version Dockerfile
+                tag = tags[0]
+                for platform in platforms:
+                    safe_platform = platform.replace('/', '_')
+                    dockerfile_path = Path(f"nix/_dockerfiles/versions/{strategy}/{safe_image_name}/{safe_platform}/Dockerfile")
+
+                    if not dockerfile_path.exists():
+                        # Create directory structure
+                        dockerfile_path.parent.mkdir(parents=True, exist_ok=True)
+
+                        # Create Dockerfile with tag
+                        dockerfile_content = create_dockerfile_with_tag(image, platform, tag)
+                        dockerfile_path.write_text(dockerfile_content)
+
+                        created_version_files.append(str(dockerfile_path))
+                        print(f"Created version: {dockerfile_path}")
+
+        # Process pin Dockerfiles for all tags
+        all_tags = []
+        all_tags.extend(item.get("initialMajor", []))
+        all_tags.extend(item.get("initialMajorMinor", []))
+        all_tags.extend(item.get("initialMajorMinorPatch", []))
+
+        for tag in all_tags:
+            safe_tag = sanitize_tag(tag)
             for platform in platforms:
-                # Sanitize platform for directory name
                 safe_platform = platform.replace('/', '_')
+                pin_path = Path(f"nix/_dockerfiles/pins/{safe_image_name}/{safe_platform}/{safe_tag}/Dockerfile")
 
-                # Check if Dockerfile exists
-                dockerfile_path = Path(f"nix/_dockerfiles/versions/{strategy}/{safe_image_name}/{safe_platform}/Dockerfile")
-
-                if not dockerfile_path.exists():
+                if not pin_path.exists():
                     # Create directory structure
-                    dockerfile_path.parent.mkdir(parents=True, exist_ok=True)
+                    pin_path.parent.mkdir(parents=True, exist_ok=True)
 
-                    # Create Dockerfile
-                    dockerfile_content = create_dockerfile(image, platform, strategy)
-                    dockerfile_path.write_text(dockerfile_content)
+                    # Create Dockerfile with tag
+                    dockerfile_content = create_dockerfile_with_tag(image, platform, tag)
+                    pin_path.write_text(dockerfile_content)
 
-                    created_files.append(str(dockerfile_path))
-                    print(f"Created: {dockerfile_path}")
+                    created_pin_files.append(str(pin_path))
+                    print(f"Created pin: {pin_path}")
 
-    if created_files or removed_files or removed_pins:
-        if created_files:
-            print(f"\nCreated {len(created_files)} new Dockerfile(s)")
-        if removed_files:
-            print(f"Removed {len(removed_files)} orphaned version Dockerfile(s)")
-        if removed_pins:
-            print(f"Removed {len(removed_pins)} orphaned pin directories")
+    # Report results
+    created = len(created_version_files) + len(created_pin_files)
+    removed = len(removed_version_files) + len(removed_pin_files)
+    total_changes = created + removed
+    if total_changes > 0:
+        if created_version_files:
+            print(f"\nCreated {len(created_version_files)} new version Dockerfile(s)")
+        if created_pin_files:
+            print(f"Created {len(created_pin_files)} new pin Dockerfile(s)")
+        if removed_version_files:
+            print(f"Removed {len(removed_version_files)} orphaned version Dockerfile(s)")
+        if removed_pin_files:
+            print(f"Removed {len(removed_pin_files)} orphaned pin Dockerfile(s)")
         sys.exit(0)  # Exit with success to trigger commit in CI
     else:
         print("No changes needed")
