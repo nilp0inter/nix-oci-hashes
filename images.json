@@ -17,8 +17,8 @@
     "image": "ghcr.io/open-webui/open-webui",
     "platforms": ["linux/amd64", "linux/arm64"],
     "initialMajor": [],
-    "initialMajorMinor": [],
-    "initialMajorMinorPatch": ["v0.6.22"]
+    "initialMajorMinor": ["0.6", "0.6-ollama"],
+    "initialMajorMinorPatch": ["0.6.22", "0.6.22-ollama"]
   },
   {
     "image": "docker.io/nextcloud",
