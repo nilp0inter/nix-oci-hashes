@@ -3,27 +3,16 @@
 {
   perSystem = { config, pkgs, system, ... }: {
     packages = {
-      generate-version-dockerfiles = pkgs.writers.writePython3Bin "generate-version-dockerfiles" {
-        libraries = [ pkgs.python3Packages.pyyaml ];
-        flakeIgnore = [ "E501" "E265" ];
-      } (builtins.readFile ./scripts/generate-version-dockerfiles.py);
-
-      harvest-tags = pkgs.writers.writePython3Bin "harvest-tags" {
+      # Unified manage-images script
+      manage-images = pkgs.writers.writePython3Bin "manage-images" {
         libraries = [ ];
         flakeIgnore = [ "E501" "E265" ];
-      } (builtins.readFile ./scripts/harvest-tags.py);
-
-      collect-digests = pkgs.writers.writePython3Bin "collect-digests" {
-        libraries = [ ];
-        flakeIgnore = [ "E501" "E265" ];
-      } (builtins.readFile ./scripts/collect-digests.py);
+      } (builtins.readFile ./scripts/manage-images.py);
 
       ci-env = pkgs.buildEnv {
         name = "nix-oci-hashes-ci-env";
         paths = with pkgs; [
-          config.packages.generate-version-dockerfiles
-          config.packages.harvest-tags
-          config.packages.collect-digests
+          config.packages.manage-images
           git
           jq
         ];
@@ -32,11 +21,8 @@
 
     devShells.default = pkgs.mkShell {
       buildInputs = with pkgs; [
-        config.packages.generate-version-dockerfiles
-        config.packages.harvest-tags
-        config.packages.collect-digests
+        config.packages.manage-images
         python3
-        python3Packages.pyyaml
         git
         jq
       ];
