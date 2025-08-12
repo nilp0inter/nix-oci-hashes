@@ -54,5 +54,12 @@
     "initialMajor": [],
     "initialMajorMinor": [],
     "initialMajorMinorPatch": ["v2.17.1"]
+  },
+  {
+    "image": "docker.io/n8nio/n8n",
+    "platforms": ["linux/amd64", "linux/arm64"],
+    "initialMajor": [],
+    "initialMajorMinor": [],
+    "initialMajorMinorPatch": ["1.106.3", "nightly", "stable"]
   }
 ]
