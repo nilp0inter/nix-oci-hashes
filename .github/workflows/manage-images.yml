@@ -15,6 +15,8 @@ on:
 jobs:
   manage:
     runs-on: ubuntu-latest
+    # Skip if the commit author is actions-user (to avoid infinite loops when Mergify merges our PRs)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && !contains(github.event.head_commit.author.name, 'actions-user'))
     permissions:
       contents: write
       pull-requests: write
