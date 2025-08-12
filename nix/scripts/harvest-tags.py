@@ -58,47 +58,6 @@ def get_valid_pins_from_versions():
     return valid_pins
 
 
-def remove_orphaned_pins(valid_pins):
-    """Remove pin directories that are no longer valid"""
-    pins_dir = Path("nix/_dockerfiles/pins")
-    if not pins_dir.exists():
-        return []
-
-    removed_pins = []
-
-    # Walk through all existing pin directories
-    for image_dir in pins_dir.iterdir():
-        if not image_dir.is_dir():
-            continue
-
-        for platform_dir in image_dir.iterdir():
-            if not platform_dir.is_dir():
-                continue
-
-            for tag_dir in platform_dir.iterdir():
-                if not tag_dir.is_dir():
-                    continue
-
-                # Check if this pin path is still valid
-                if tag_dir not in valid_pins:
-                    # Remove this tag directory
-                    shutil.rmtree(tag_dir)
-                    removed_pins.append(str(tag_dir))
-                    print(f"Removed orphaned pin: {tag_dir}")
-
-            # Clean up empty platform directory
-            if platform_dir.exists() and not any(platform_dir.iterdir()):
-                platform_dir.rmdir()
-                print(f"Removed empty directory: {platform_dir}")
-
-        # Clean up empty image directory
-        if image_dir.exists() and not any(image_dir.iterdir()):
-            image_dir.rmdir()
-            print(f"Removed empty directory: {image_dir}")
-
-    return removed_pins
-
-
 def main():
     versions_dir = Path("nix/_dockerfiles/versions")
     pins_dir = Path("nix/_dockerfiles/pins")
@@ -109,9 +68,6 @@ def main():
 
     # Get valid pins based on current version Dockerfiles
     valid_pins = get_valid_pins_from_versions()
-
-    # Remove orphaned pins first
-    removed_pins = remove_orphaned_pins(valid_pins)
 
     created_files = []
 
@@ -150,11 +106,9 @@ def main():
             created_files.append(str(pin_dockerfile_path))
             print(f"Created pin: {pin_dockerfile_path}")
 
-    if created_files or removed_pins:
+    if created_files:
         if created_files:
             print(f"\nCreated {len(created_files)} new pin Dockerfile(s)")
-        if removed_pins:
-            print(f"Removed {len(removed_pins)} orphaned pin(s)")
         sys.exit(0)  # Exit with success to trigger commit in CI
     else:
         print("No changes needed")

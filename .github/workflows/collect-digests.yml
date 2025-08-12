@@ -5,6 +5,7 @@ on:
     paths:
       - 'nix/_dockerfiles/pins/**'
       - '.github/workflows/collect-digests.yml'
+      - 'nix/scripts/collect-digests.py'
     branches:
       - main
   workflow_dispatch:

@@ -200,14 +200,6 @@ Renovate respects these constraints when updating tags in the version Dockerfile
 8. **Nix Flake**: Exposes `digests.json` as structured attribute set
 9. **Mergify**: Automatically merges Renovate PRs after checks pass
 
-### Automatic Cleanup
-
-When images or platforms are removed from `images.json`, the automation scripts automatically:
-- Remove orphaned version Dockerfiles
-- Remove orphaned pin Dockerfiles
-- Update `digests.json` to reflect the changes
-- Clean up empty directories
-
 ## Benefits
 
 - **Zero Maintenance**: Once configured, images stay updated automatically

@@ -5,6 +5,7 @@ on:
     paths:
       - 'nix/_dockerfiles/versions/**'
       - '.github/workflows/harvest-tags.yml'
+      - 'nix/scripts/harvest-tags.py'
     branches:
       - main
   workflow_dispatch:

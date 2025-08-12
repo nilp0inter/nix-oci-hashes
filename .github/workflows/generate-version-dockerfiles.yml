@@ -5,6 +5,7 @@ on:
     paths:
       - 'images.json'
       - '.github/workflows/generate-version-dockerfiles.yml'
+      - 'nix/scripts/generate-version-dockerfiles.py'
     branches:
       - main
   workflow_dispatch:
