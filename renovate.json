@@ -8,7 +8,15 @@
       "description": "For pins: ALWAYS enable digest pinning for all images",
       "matchFileNames": ["nix/_dockerfiles/pins/**"],
       "matchManagers": ["dockerfile"],
-      "pinDigests": true
+      "pinDigests": true,
+      "labels": [
+        "dependencies",
+        "docker",
+        "digest-update"
+      ],
+      "commitMessagePrefix": "update(docker): ",
+      "commitMessageTopic": "digests",
+      "commitMessageExtra": ""
     },
     {
       "description": "For pins: Disable all tag updates (major, minor, patch)",
@@ -24,6 +32,21 @@
       "pinDigests": false,
       "matchUpdateTypes": ["digest", "pinDigest"],
       "enabled": false
+    },
+    {
+      "description": "For version tag updates: nixpkgs-style commit messages",
+      "matchFileNames": ["nix/_dockerfiles/versions/**"],
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "labels": [
+        "dependencies",
+        "docker",
+        "tag-update"
+      ],
+      "commitMessagePrefix": "",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": ": {{currentValue}} -> {{newValue}}",
+      "semanticCommits": "disabled"
     },
     {
       "description": "For 'major/': Only allow major version updates",
@@ -45,12 +68,5 @@
   "prCreation": "immediate",
   "autoApprove": true,
   "automerge": false,
-  "labels": [
-    "dependencies",
-    "docker"
-  ],
-  "commitMessagePrefix": "chore(docker): ",
-  "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": "to {{newVersion}}",
   "configMigration": true
 }
