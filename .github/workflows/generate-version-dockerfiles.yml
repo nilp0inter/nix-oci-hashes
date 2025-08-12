@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'images.json'
+      - '.github/workflows/generate-version-dockerfiles.yml'
     branches:
       - main
   workflow_dispatch:
@@ -34,7 +35,8 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if [[ -n $(git status --porcelain) ]]; then
+          git add -A nix/_dockerfiles/versions/
+          if [[ -n $(git status --porcelain nix/_dockerfiles/versions/) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT
@@ -45,6 +47,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add nix/_dockerfiles/versions/
           git commit -m "chore: generate version Dockerfiles from images.json"
           git push

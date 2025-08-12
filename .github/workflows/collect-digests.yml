@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'nix/_dockerfiles/pins/**'
+      - '.github/workflows/collect-digests.yml'
     branches:
       - main
   workflow_dispatch:
@@ -34,7 +35,8 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if [[ -n $(git diff --name-only digests.json) ]]; then
+          git add digests.json
+          if [[ -n $(git status --porcelain digests.json) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT
@@ -45,6 +47,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add digests.json
           git commit -m "chore: update digests.json with latest image references"
           git push
