@@ -42,13 +42,6 @@
     "initialMajorMinorPatch": ["10.10.7"]
   },
   {
-    "image": "ghcr.io/immich-app/immich-server",
-    "platforms": ["linux/amd64", "linux/arm64"],
-    "initialMajor": [],
-    "initialMajorMinor": [],
-    "initialMajorMinorPatch": ["v1.137.3"]
-  },
-  {
     "image": "ghcr.io/paperless-ngx/paperless-ngx",
     "platforms": ["linux/amd64", "linux/arm64"],
     "initialMajor": [],
