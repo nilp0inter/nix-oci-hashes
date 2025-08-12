@@ -1,9 +1,78 @@
+priority_rules:
+  - name: OCI workflow updates
+    priority: 3000
+    conditions:
+      - label=update
+      - label=digests
+  - name: Renovate digest updates
+    priority: 2500
+    conditions:
+      - author~=^renovate
+      - label=digest-update
+  - name: Renovate tag updates
+    priority: 2000
+    conditions:
+      - author~=^renovate
+      - label=tag-update
+  - name: GitHub Actions updates
+    priority: 1000
+    conditions:
+      - author~=^renovate
+      - label=github-actions
+  - name: Nix flake updates
+    priority: 500
+    conditions:
+      - author~=^renovate
+      - label=nix-flake
+
+queue_rules:
+  - name: default
+    merge_method: rebase
+
 pull_request_rules:
-  - name: Auto-merge Renovate Docker updates
+  - name: Auto-merge OCI workflow updates
+    conditions:
+      - label=update
+      - label=digests
+      - "#approved-reviews-by>=0"  # No approval required for automated updates
+    actions:
+      queue:
+        name: default
+
+  - name: Auto-merge Renovate digest updates
     conditions:
       - author~=^renovate
       - label=dependencies
       - label=docker
+      - label=digest-update
     actions:
-      merge:
-        method: rebase
+      queue:
+        name: default
+
+  - name: Auto-merge Renovate tag updates
+    conditions:
+      - author~=^renovate
+      - label=dependencies
+      - label=docker
+      - label=tag-update
+    actions:
+      queue:
+        name: default
+
+  - name: Auto-merge GitHub Actions updates
+    conditions:
+      - author~=^renovate
+      - label=dependencies
+      - label=github-actions
+    actions:
+      queue:
+        name: default
+
+  - name: Auto-merge Nix flake updates
+    conditions:
+      - author~=^renovate
+      - label=dependencies
+      - label=nix-flake
+    actions:
+      queue:
+        name: default

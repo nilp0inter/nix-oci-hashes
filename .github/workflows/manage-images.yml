@@ -1,0 +1,174 @@
+name: Manage OCI Images
+
+on:
+  push:
+    paths:
+      - 'images.json'
+      - 'nix/_dockerfiles/versions/**'
+      - 'nix/_dockerfiles/pins/**'
+      - '.github/workflows/manage-images.yml'
+      - 'nix/scripts/manage-images.py'
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.PR_TOKEN || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      
+      - name: Build manage-images script
+        run: |
+          echo "Building manage-images script..."
+          nix build .#manage-images
+          echo "Build completed successfully"
+      
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          files_yaml: |
+            images:
+              - images.json
+              - .github/workflows/manage-images.yml
+              - nix/scripts/manage-images.py
+            versions:
+              - nix/_dockerfiles/versions/**
+            pins:
+              - nix/_dockerfiles/pins/**
+      
+      - name: Determine which steps to run
+        id: determine-steps
+        run: |
+          # Step 1 runs if images.json, workflow, or script changed
+          if [[ "${{ steps.changed-files.outputs.images_any_changed }}" == "true" ]] || [[ "${{ github.event_name }}" == "workflow_dispatch" ]] || [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "run_step1=true" >> $GITHUB_OUTPUT
+          else
+            echo "run_step1=false" >> $GITHUB_OUTPUT
+          fi
+          
+          # Step 2 runs if Step 1 conditions are met OR versions changed
+          if [[ "${{ steps.changed-files.outputs.images_any_changed }}" == "true" ]] || \
+             [[ "${{ steps.changed-files.outputs.versions_any_changed }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "workflow_dispatch" ]] || \
+             [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "run_step2=true" >> $GITHUB_OUTPUT
+          else
+            echo "run_step2=false" >> $GITHUB_OUTPUT
+          fi
+          
+          # Step 3 runs if Step 2 conditions are met OR pins changed
+          if [[ "${{ steps.changed-files.outputs.images_any_changed }}" == "true" ]] || \
+             [[ "${{ steps.changed-files.outputs.versions_any_changed }}" == "true" ]] || \
+             [[ "${{ steps.changed-files.outputs.pins_any_changed }}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "workflow_dispatch" ]] || \
+             [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "run_step3=true" >> $GITHUB_OUTPUT
+          else
+            echo "run_step3=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+      
+      - name: Step 1 - Generate version Dockerfiles
+        if: steps.determine-steps.outputs.run_step1 == 'true'
+        run: |
+          echo "Running Step 1: Generate version Dockerfiles"
+          nix run .#manage-images -- generate-versions
+          
+          # Commit version changes if any
+          if [[ -n $(git status --porcelain nix/_dockerfiles/versions/) ]]; then
+            git add nix/_dockerfiles/versions/
+            git commit -m "chore: generate version Dockerfiles from images.json"
+          fi
+      
+      - name: Step 2 - Generate pin Dockerfiles
+        if: steps.determine-steps.outputs.run_step2 == 'true'
+        run: |
+          echo "Running Step 2: Generate pin Dockerfiles"
+          nix run .#manage-images -- generate-pins
+          
+          # Commit pin changes if any
+          if [[ -n $(git status --porcelain nix/_dockerfiles/pins/) ]]; then
+            git add nix/_dockerfiles/pins/
+            git commit -m "chore: generate pin Dockerfiles from version tags"
+          fi
+      
+      - name: Step 3 - Harvest digests
+        if: steps.determine-steps.outputs.run_step3 == 'true'
+        run: |
+          echo "Running Step 3: Harvest digests"
+          nix run .#manage-images -- harvest-digests
+          
+          # Commit digest changes if any
+          if [[ -n $(git status --porcelain digests.json) ]]; then
+            git add digests.json
+            git commit -m "chore: update digests.json with latest image references"
+          fi
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          # Check if there are any new commits
+          if git diff --quiet HEAD origin/main; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Commits to push:"
+            git log --oneline origin/main..HEAD
+          fi
+      
+      - name: Push changes and create PR
+        if: steps.check_changes.outputs.changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PR_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          # Create a unique branch name
+          BRANCH_NAME="update-oci-images-$(date +%Y%m%d-%H%M%S)"
+          
+          # Create and push the branch
+          git checkout -b "$BRANCH_NAME"
+          git push origin "$BRANCH_NAME"
+          
+          # Create the PR using GitHub CLI
+          gh pr create \
+            --title "chore: update OCI image references" \
+            --body "## Automated OCI Image Update
+            
+            This PR contains automated updates to OCI image references:
+            
+            - Version Dockerfiles generated from \`images.json\`
+            - Pin Dockerfiles created from version tags
+            - Updated \`digests.json\` with latest image references
+            
+            ### Commits
+            
+            \`\`\`
+            $(git log --oneline origin/main..HEAD)
+            \`\`\`
+            
+            This PR will be automatically merged by Mergify if all checks pass." \
+            --label "update" \
+            --label "digests" \
+            --base main \
+            --head "$BRANCH_NAME"
