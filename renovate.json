@@ -8,7 +8,9 @@
   },
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 3am on Monday"],
+    "schedule": [
+      "before 3am on Monday"
+    ],
     "labels": [
       "dependencies",
       "nix-flake"
@@ -20,7 +22,9 @@
   "packageRules": [
     {
       "description": "GitHub Actions updates",
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "labels": [
         "dependencies",
         "github-actions"
@@ -32,7 +36,9 @@
     },
     {
       "description": "Nix flake updates",
-      "matchManagers": ["nix"],
+      "matchManagers": [
+        "nix"
+      ],
       "labels": [
         "dependencies",
         "nix-flake"
@@ -44,8 +50,12 @@
     },
     {
       "description": "For pins: ALWAYS enable digest pinning for all images",
-      "matchFileNames": ["nix/_dockerfiles/pins/**"],
-      "matchManagers": ["dockerfile"],
+      "matchFileNames": [
+        "nix/_dockerfiles/pins/**"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
       "pinDigests": true,
       "labels": [
         "dependencies",
@@ -58,24 +68,47 @@
     },
     {
       "description": "For pins: Disable all tag updates (major, minor, patch)",
-      "matchFileNames": ["nix/_dockerfiles/pins/**"],
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchFileNames": [
+        "nix/_dockerfiles/pins/**"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
       "enabled": false
     },
     {
       "description": "For all in 'versions/': Disable digests completely",
-      "matchFileNames": ["nix/_dockerfiles/versions/**"],
-      "matchManagers": ["dockerfile"],
+      "matchFileNames": [
+        "nix/_dockerfiles/versions/**"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
       "pinDigests": false,
-      "matchUpdateTypes": ["digest", "pinDigest"],
+      "matchUpdateTypes": [
+        "digest",
+        "pinDigest"
+      ],
       "enabled": false
     },
     {
       "description": "For version tag updates: nixpkgs-style commit messages",
-      "matchFileNames": ["nix/_dockerfiles/versions/**"],
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchFileNames": [
+        "nix/_dockerfiles/versions/**"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
       "labels": [
         "dependencies",
         "docker",
@@ -88,16 +121,29 @@
     },
     {
       "description": "For 'major/': Only allow major version updates",
-      "matchFileNames": ["nix/_dockerfiles/versions/major/**"],
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchFileNames": [
+        "nix/_dockerfiles/versions/major/**"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "enabled": false
     },
     {
       "description": "For 'major-minor/': Allow major and minor updates only",
-      "matchFileNames": ["nix/_dockerfiles/versions/major-minor/**"],
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["patch"],
+      "matchFileNames": [
+        "nix/_dockerfiles/versions/major-minor/**"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "enabled": false
     }
   ],
@@ -108,5 +154,5 @@
   "automerge": false,
   "configMigration": true,
   "rebaseWhen": "behind-base-branch",
-  "recreateClosed": true
+  "recreateWhen": "always"
 }
