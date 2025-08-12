@@ -43,12 +43,12 @@ Add this flake to your NixOS configuration:
         ({ ... }: {
           virtualisation.oci-containers.containers = {
             home-assistant = {
-              image = nix-oci-hashes.ociHashes."docker.io/homeassistant/home-assistant"."2024.12"."linux/amd64";
+              image = nix-oci-hashes.ociHashes."docker.io/homeassistant/home-assistant"."2025.8"."linux/amd64";
               ports = ["8123:8123"];
             };
             
             nextcloud = {
-              image = nix-oci-hashes.ociHashes."docker.io/nextcloud"."29"."linux/amd64";
+              image = nix-oci-hashes.ociHashes."docker.io/nextcloud"."30"."linux/amd64";
               environment = {
                 POSTGRES_HOST = "postgres";
               };
@@ -62,8 +62,8 @@ Add this flake to your NixOS configuration:
 ```
 
 The `image` values will resolve to fully pinned references like:
-- `docker.io/homeassistant/home-assistant:2024.12@sha256:abc123...`
-- `docker.io/nextcloud:29@sha256:def456...`
+- `docker.io/homeassistant/home-assistant:2025.8@sha256:abc123...`
+- `docker.io/nextcloud:30@sha256:def456...`
 
 ### Platform-Specific Images
 
@@ -71,10 +71,10 @@ The flake supports multiple platforms for each image:
 
 ```nix
 # For AMD64 systems
-image = nix-oci-hashes.ociHashes."docker.io/nextcloud"."29"."linux/amd64";
+image = nix-oci-hashes.ociHashes."docker.io/nextcloud"."30"."linux/amd64";
 
 # For ARM64 systems (e.g., Raspberry Pi 4, Apple Silicon)
-image = nix-oci-hashes.ociHashes."docker.io/nextcloud"."29"."linux/arm64";
+image = nix-oci-hashes.ociHashes."docker.io/nextcloud"."30"."linux/arm64";
 ```
 
 ### Updating Images
@@ -97,22 +97,30 @@ nix eval github:nilp0inter/nix-oci-hashes#ociHashes --apply builtins.attrNames -
 nix eval 'github:nilp0inter/nix-oci-hashes#ociHashes."docker.io/homeassistant/home-assistant"' --apply builtins.attrNames --json | jq
 
 # List platforms for a specific image version
-nix eval 'github:nilp0inter/nix-oci-hashes#ociHashes."docker.io/homeassistant/home-assistant"."2024.12"' --apply builtins.attrNames --json | jq
+nix eval 'github:nilp0inter/nix-oci-hashes#ociHashes."docker.io/homeassistant/home-assistant"."2025.8"' --apply builtins.attrNames --json | jq
 
 # Get specific image reference
-nix eval 'github:nilp0inter/nix-oci-hashes#ociHashes."docker.io/homeassistant/home-assistant"."2024.12"."linux/amd64"' --raw
+nix eval 'github:nilp0inter/nix-oci-hashes#ociHashes."docker.io/homeassistant/home-assistant"."2025.8"."linux/amd64"' --raw
 ```
 
-Currently tracked images include:
-- **Home Automation**: Home Assistant
-- **Media Servers**: Plex Media Server
-- **Security Cameras**: Frigate
-- **Cloud Storage**: Nextcloud
-- **Document Management**: Paperless-ngx
-- **Chat**: Matrix Synapse
-- **Authentication**: Authelia, Keycloak
-- **Password Management**: Vaultwarden
-- **CI/CD**: GitLab CE
+## Currently Tracked Images
+
+This flake focuses on applications that benefit from Docker deployment due to their:
+- Rapid release cycles
+- Complex dependency chains
+- Strong Docker-first communities
+- Better isolation requirements
+
+| Application | Description | Why Docker? |
+|------------|-------------|-------------|
+| **Home Assistant** | Home automation platform | Rapid releases (monthly), complex Python dependencies, extensive integrations |
+| **Plex Media Server** | Media streaming server | Proprietary software, frequent updates, transcoding dependencies |
+| **Open WebUI** | Web interface for LLMs | Fast-moving AI space, complex ML dependencies |
+| **Nextcloud** | Self-hosted cloud platform | Complex PHP stack, many plugins, easier upgrades |
+| **Vaultwarden** | Bitwarden-compatible server | Rust implementation, simpler than NixOS module |
+| **Jellyfin** | Open-source media server | Active development, media codecs, web dependencies |
+| **Immich** | Self-hosted photo solution | Very active development, complex ML/AI stack |
+| **Paperless-ngx** | Document management | OCR dependencies, machine learning components |
 
 ## Repository Structure
 
@@ -148,17 +156,26 @@ Currently tracked images include:
    ```json
    {
      "image": "docker.io/grafana/grafana",
-     "platforms": ["linux/amd64", "linux/arm64"]
+     "platforms": ["linux/amd64", "linux/arm64"],
+     "initialMajor": ["11"],
+     "initialMajorMinor": ["11.4"],
+     "initialMajorMinorPatch": ["11.4.2"]
    }
    ```
    
-   Use the fully qualified image name including the registry (docker.io, ghcr.io, etc.).
+   - Use the fully qualified image name including the registry (docker.io, ghcr.io, etc.)
+   - Specify supported platforms
+   - Provide initial version tags to bootstrap Renovate's update detection:
+     - `initialMajor`: List of major version tags (e.g., `["11"]`)
+     - `initialMajorMinor`: List of major.minor tags (e.g., `["11.4"]`)
+     - `initialMajorMinorPatch`: List of full version tags (e.g., `["11.4.2"]`)
+   - Leave arrays empty if that version strategy doesn't apply
 
 2. **Submit a pull request**. The automation will:
-   - Create Dockerfiles in all version strategy directories
-   - Renovate will add appropriate version tags based on the directory
-   - Pin Dockerfiles will be created with those tags
-   - Renovate will add SHA256 digests to the pin Dockerfiles
+   - Create version Dockerfiles with initial tags
+   - Create pin Dockerfiles for all specified tags
+   - Renovate will update version tags based on directory constraints
+   - Renovate will add SHA256 digests to pin Dockerfiles
    - `digests.json` will be updated with all references
 
 ### Version Strategies
@@ -173,14 +190,15 @@ Renovate respects these constraints when updating tags in the version Dockerfile
 
 ## How It Works
 
-1. **`images.json`**: Defines which images and platforms to track
-2. **CI Workflow**: Creates version Dockerfiles with `:latest` tag for all version strategies
-3. **Renovate Bot**: Adds specific version tags to version Dockerfiles based on directory constraints
-4. **CI Workflow**: Harvests tags from version Dockerfiles and creates pin Dockerfiles
-5. **Renovate Bot**: Adds SHA256 digests to pin Dockerfiles
-6. **CI Workflow**: Collects all references from pin Dockerfiles into `digests.json`
-7. **Nix Flake**: Exposes `digests.json` as structured attribute set
-8. **Mergify**: Automatically merges Renovate PRs after checks pass
+1. **`images.json`**: Defines which images, platforms, and initial versions to track
+2. **CI Workflow**: Creates version Dockerfiles with initial tags for each version strategy
+3. **CI Workflow**: Creates pin Dockerfiles for all initial tags
+4. **Renovate Bot**: Updates version tags in version Dockerfiles based on directory constraints
+5. **CI Workflow**: Harvests new tags from version Dockerfiles and creates new pin Dockerfiles
+6. **Renovate Bot**: Adds SHA256 digests to pin Dockerfiles
+7. **CI Workflow**: Collects all references from pin Dockerfiles into `digests.json`
+8. **Nix Flake**: Exposes `digests.json` as structured attribute set
+9. **Mergify**: Automatically merges Renovate PRs after checks pass
 
 ### Automatic Cleanup
 
@@ -198,6 +216,7 @@ When images or platforms are removed from `images.json`, the automation scripts 
 - **Auditable**: Git history shows exactly when and what was updated
 - **Flexible**: Supports multiple versioning strategies and registries
 - **Native Integration**: Works seamlessly with `nix flake update`
+- **Docker-First Apps**: Focuses on applications that truly benefit from containerization
 
 ## License
 
