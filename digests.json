@@ -35,20 +35,20 @@
   },
   "docker.io/nextcloud": {
     "30": {
-      "linux/amd64": "docker.io/nextcloud:30@sha256:72f5e25d6f0ea3c57b9b28aa318793187edfe6d87c0de04e84600933643f3f81",
-      "linux/arm64": "docker.io/nextcloud:30@sha256:72f5e25d6f0ea3c57b9b28aa318793187edfe6d87c0de04e84600933643f3f81"
+      "linux/amd64": "docker.io/nextcloud:30@sha256:7391d58d2dbf857ed3413bf2badce0df710d789ce66cdb051a3f500c9b05f32a",
+      "linux/arm64": "docker.io/nextcloud:30@sha256:7391d58d2dbf857ed3413bf2badce0df710d789ce66cdb051a3f500c9b05f32a"
     },
     "30.0": {
-      "linux/amd64": "docker.io/nextcloud:30.0@sha256:72f5e25d6f0ea3c57b9b28aa318793187edfe6d87c0de04e84600933643f3f81",
-      "linux/arm64": "docker.io/nextcloud:30.0@sha256:72f5e25d6f0ea3c57b9b28aa318793187edfe6d87c0de04e84600933643f3f81"
+      "linux/amd64": "docker.io/nextcloud:30.0@sha256:7391d58d2dbf857ed3413bf2badce0df710d789ce66cdb051a3f500c9b05f32a",
+      "linux/arm64": "docker.io/nextcloud:30.0@sha256:7391d58d2dbf857ed3413bf2badce0df710d789ce66cdb051a3f500c9b05f32a"
     },
     "31": {
-      "linux/amd64": "docker.io/nextcloud:31@sha256:b255a97449e615b1839fd050aa41f7727bc0e11d121e472a380bcdfa9f3133d8",
-      "linux/arm64": "docker.io/nextcloud:31@sha256:b255a97449e615b1839fd050aa41f7727bc0e11d121e472a380bcdfa9f3133d8"
+      "linux/amd64": "docker.io/nextcloud:31@sha256:95c0f29c824445389e8b855de7f2f1acd7b73b136807a5e8d6f80b0db940e38f",
+      "linux/arm64": "docker.io/nextcloud:31@sha256:95c0f29c824445389e8b855de7f2f1acd7b73b136807a5e8d6f80b0db940e38f"
     },
     "31.0": {
-      "linux/amd64": "docker.io/nextcloud:31.0@sha256:b255a97449e615b1839fd050aa41f7727bc0e11d121e472a380bcdfa9f3133d8",
-      "linux/arm64": "docker.io/nextcloud:31.0@sha256:b255a97449e615b1839fd050aa41f7727bc0e11d121e472a380bcdfa9f3133d8"
+      "linux/amd64": "docker.io/nextcloud:31.0@sha256:95c0f29c824445389e8b855de7f2f1acd7b73b136807a5e8d6f80b0db940e38f",
+      "linux/arm64": "docker.io/nextcloud:31.0@sha256:95c0f29c824445389e8b855de7f2f1acd7b73b136807a5e8d6f80b0db940e38f"
     }
   },
   "docker.io/plexinc/pms-docker": {
