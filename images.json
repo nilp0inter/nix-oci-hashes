@@ -11,7 +11,7 @@
     "platforms": ["linux/amd64", "linux/arm64"],
     "initialMajor": [],
     "initialMajorMinor": [],
-    "initialMajorMinorPatch": ["1.42.1.10060-4e8b05daf"]
+    "initialMajorMinorPatch": ["1.42.1.10060-4e8b05daf", "latest"]
   },
   {
     "image": "ghcr.io/open-webui/open-webui",
