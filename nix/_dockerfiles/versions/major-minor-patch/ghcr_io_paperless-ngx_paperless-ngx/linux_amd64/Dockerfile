@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 ghcr.io/paperless-ngx/paperless-ngx:2.18.1
+FROM --platform=linux/amd64 ghcr.io/paperless-ngx/paperless-ngx:2.18.2
