@@ -59,16 +59,16 @@
   },
   "docker.io/nextcloud": {
     "30": {
-      "linux/amd64": "docker.io/nextcloud:30@sha256:42c052ba750c471ce304728596cf8c3c31eace891c6f55cf7173e3a66098be0b",
-      "linux/arm64": "docker.io/nextcloud:30@sha256:42c052ba750c471ce304728596cf8c3c31eace891c6f55cf7173e3a66098be0b"
+      "linux/amd64": "docker.io/nextcloud:30@sha256:2d516f518c5b8d0a548cfd5b87944cef8371583c863793af4a13b253cf6d94f9",
+      "linux/arm64": "docker.io/nextcloud:30@sha256:2d516f518c5b8d0a548cfd5b87944cef8371583c863793af4a13b253cf6d94f9"
     },
     "30.0": {
-      "linux/amd64": "docker.io/nextcloud:30.0@sha256:42c052ba750c471ce304728596cf8c3c31eace891c6f55cf7173e3a66098be0b",
-      "linux/arm64": "docker.io/nextcloud:30.0@sha256:42c052ba750c471ce304728596cf8c3c31eace891c6f55cf7173e3a66098be0b"
+      "linux/amd64": "docker.io/nextcloud:30.0@sha256:2d516f518c5b8d0a548cfd5b87944cef8371583c863793af4a13b253cf6d94f9",
+      "linux/arm64": "docker.io/nextcloud:30.0@sha256:2d516f518c5b8d0a548cfd5b87944cef8371583c863793af4a13b253cf6d94f9"
     },
     "31": {
-      "linux/amd64": "docker.io/nextcloud:31@sha256:72abe188e4045026f880e124de5c281c5bbea555b468f68344b3fa97a4dcaa58",
-      "linux/arm64": "docker.io/nextcloud:31@sha256:72abe188e4045026f880e124de5c281c5bbea555b468f68344b3fa97a4dcaa58"
+      "linux/amd64": "docker.io/nextcloud:31@sha256:3eaddb0a9c56e6cf81ad258a5d05b78f747f6434b974f9a44e3f0dd91311b6ef",
+      "linux/arm64": "docker.io/nextcloud:31@sha256:3eaddb0a9c56e6cf81ad258a5d05b78f747f6434b974f9a44e3f0dd91311b6ef"
     },
     "31.0": {
       "linux/amd64": "docker.io/nextcloud:31.0@sha256:72abe188e4045026f880e124de5c281c5bbea555b468f68344b3fa97a4dcaa58",
@@ -153,6 +153,10 @@
     "v0.6.25": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.6.25@sha256:1c2c3e7e84d5bb0b5471e4de881539cf39e724835a5c53b252518e82ea0c568e",
       "linux/arm64": "ghcr.io/open-webui/open-webui:v0.6.25@sha256:1c2c3e7e84d5bb0b5471e4de881539cf39e724835a5c53b252518e82ea0c568e"
+    },
+    "v0.6.26": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.6.26@sha256:3121ba5f8526bcc7f4ff387d0fc8a9caab54f84c4a6fb552b634575d10b1582b",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.6.26@sha256:3121ba5f8526bcc7f4ff387d0fc8a9caab54f84c4a6fb552b634575d10b1582b"
     }
   },
   "ghcr.io/paperless-ngx/paperless-ngx": {
