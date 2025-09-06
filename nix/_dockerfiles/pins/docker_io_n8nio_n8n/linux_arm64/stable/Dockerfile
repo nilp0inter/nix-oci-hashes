@@ -1,1 +1,1 @@
-FROM --platform=linux/arm64 docker.io/n8nio/n8n:stable@sha256:0f4f26eba634839a37f20f2240db57f85c7c97d26f75b1182dd4c1c86dd0c041
+FROM --platform=linux/arm64 docker.io/n8nio/n8n:stable@sha256:be916ce819d5020e10f846b79f756649894e84dc75faf2db30b5ce38d788a711
