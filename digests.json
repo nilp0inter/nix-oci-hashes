@@ -15,6 +15,14 @@
     "2025.8.3": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2025.8.3@sha256:2eb83307a08de3287822b648fce4cbf1364423b55f2af623c149c6b21c2cef00",
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.8.3@sha256:2eb83307a08de3287822b648fce4cbf1364423b55f2af623c149c6b21c2cef00"
+    },
+    "2025.9": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f"
+    },
+    "2025.9.1": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9.1@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9.1@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f"
     }
   },
   "docker.io/jellyfin/jellyfin": {
@@ -175,6 +183,10 @@
     "2.18.2": {
       "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.18.2@sha256:fbe142ff2e02713740329ebb5981c6bb6fe54f8b4de18e98637c2ff586ea1935",
       "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.18.2@sha256:fbe142ff2e02713740329ebb5981c6bb6fe54f8b4de18e98637c2ff586ea1935"
+    },
+    "2.18.3": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.18.3@sha256:6dbe57d8198fa117158ba9e867e2d45280b65e9c37ea54c1df7b34c4085a564c",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.18.3@sha256:6dbe57d8198fa117158ba9e867e2d45280b65e9c37ea54c1df7b34c4085a564c"
     }
   }
 }
