@@ -17,8 +17,8 @@
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.8.3@sha256:2eb83307a08de3287822b648fce4cbf1364423b55f2af623c149c6b21c2cef00"
     },
     "2025.9": {
-      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f",
-      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f"
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9@sha256:37af5e84627dc6cc4f8ce2de631cca7ee1fc76c908b429b3a8c1ec46f246a5fe",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9@sha256:37af5e84627dc6cc4f8ce2de631cca7ee1fc76c908b429b3a8c1ec46f246a5fe"
     },
     "2025.9.1": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9.1@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f",
@@ -57,8 +57,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:1.108.1@sha256:8509288ac9c0591ddb8a4e4a8e432e003f3cc91bf492cfed6e2c8125c3de3a94"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:d940b6027352e4982fc199ab9fa0ff2dc68c9dbc25cfb078cbfa67c7f1ff83ab",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:d940b6027352e4982fc199ab9fa0ff2dc68c9dbc25cfb078cbfa67c7f1ff83ab"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:87461cd65af8aa022085a2c5890f984329ed7c1c82d30176d5ea3189b0ae0765",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:87461cd65af8aa022085a2c5890f984329ed7c1c82d30176d5ea3189b0ae0765"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:6c0c7650150a3fb0fd30d13160a87b5227963c36c9297b5bda618bcadfcee932",
@@ -67,8 +67,8 @@
   },
   "docker.io/nextcloud": {
     "30": {
-      "linux/amd64": "docker.io/nextcloud:30@sha256:18ac0b56fca07f35c445c9cf3490b12c3c5b6855a52b3de4d6613218f1c620d5",
-      "linux/arm64": "docker.io/nextcloud:30@sha256:18ac0b56fca07f35c445c9cf3490b12c3c5b6855a52b3de4d6613218f1c620d5"
+      "linux/amd64": "docker.io/nextcloud:30@sha256:ab3b5884da2c647a93e788bbcddf2d8d47a9a7997ef71cf1e5b46fad7c2c8b90",
+      "linux/arm64": "docker.io/nextcloud:30@sha256:ab3b5884da2c647a93e788bbcddf2d8d47a9a7997ef71cf1e5b46fad7c2c8b90"
     },
     "30.0": {
       "linux/amd64": "docker.io/nextcloud:30.0@sha256:18ac0b56fca07f35c445c9cf3490b12c3c5b6855a52b3de4d6613218f1c620d5",
