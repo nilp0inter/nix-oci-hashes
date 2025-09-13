@@ -17,12 +17,16 @@
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.8.3@sha256:2eb83307a08de3287822b648fce4cbf1364423b55f2af623c149c6b21c2cef00"
     },
     "2025.9": {
-      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9@sha256:37af5e84627dc6cc4f8ce2de631cca7ee1fc76c908b429b3a8c1ec46f246a5fe",
-      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9@sha256:37af5e84627dc6cc4f8ce2de631cca7ee1fc76c908b429b3a8c1ec46f246a5fe"
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9@sha256:2da8dea31821db443a69d822bd0c47972572fc8379a920a8fac730d2072c8ed2",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9@sha256:2da8dea31821db443a69d822bd0c47972572fc8379a920a8fac730d2072c8ed2"
     },
     "2025.9.1": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9.1@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f",
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9.1@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f"
+    },
+    "2025.9.2": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.9.2@sha256:37af5e84627dc6cc4f8ce2de631cca7ee1fc76c908b429b3a8c1ec46f246a5fe",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9.2@sha256:37af5e84627dc6cc4f8ce2de631cca7ee1fc76c908b429b3a8c1ec46f246a5fe"
     }
   },
   "docker.io/jellyfin/jellyfin": {
@@ -131,6 +135,10 @@
     "v1.141.1": {
       "linux/amd64": "ghcr.io/immich-app/immich-server:v1.141.1@sha256:6d48910532cb8e2bc85737e52a633c2e65eeb499f6307e106cd131c5778ec634",
       "linux/arm64": "ghcr.io/immich-app/immich-server:v1.141.1@sha256:6d48910532cb8e2bc85737e52a633c2e65eeb499f6307e106cd131c5778ec634"
+    },
+    "v1.142.0": {
+      "linux/amd64": "ghcr.io/immich-app/immich-server:v1.142.0@sha256:29f12a20fd1975c9df06d99a65658cec40bf2357fb597499c32ee50a75f250ea",
+      "linux/arm64": "ghcr.io/immich-app/immich-server:v1.142.0@sha256:29f12a20fd1975c9df06d99a65658cec40bf2357fb597499c32ee50a75f250ea"
     }
   },
   "ghcr.io/open-webui/open-webui": {
