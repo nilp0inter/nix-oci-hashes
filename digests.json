@@ -65,30 +65,30 @@
       "linux/arm64": "docker.io/n8nio/n8n:1.108.1@sha256:8509288ac9c0591ddb8a4e4a8e432e003f3cc91bf492cfed6e2c8125c3de3a94"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:3733fe52d5c476d0f19b56b8510286c72382584902ccbeb8536ade02e80501bb",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:3733fe52d5c476d0f19b56b8510286c72382584902ccbeb8536ade02e80501bb"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:d2d67a5684db5b526967a5f2187310ee12691fb219f03eeadb82b3559a0921ef",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:d2d67a5684db5b526967a5f2187310ee12691fb219f03eeadb82b3559a0921ef"
     },
     "stable": {
-      "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:6c0c7650150a3fb0fd30d13160a87b5227963c36c9297b5bda618bcadfcee932",
-      "linux/arm64": "docker.io/n8nio/n8n:stable@sha256:6c0c7650150a3fb0fd30d13160a87b5227963c36c9297b5bda618bcadfcee932"
+      "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:8c99deed73dbb7f7b32c49f328015fe8322129a9dcf0459a10c4398af255083f",
+      "linux/arm64": "docker.io/n8nio/n8n:stable@sha256:8c99deed73dbb7f7b32c49f328015fe8322129a9dcf0459a10c4398af255083f"
     }
   },
   "docker.io/nextcloud": {
     "30": {
-      "linux/amd64": "docker.io/nextcloud:30@sha256:ab3b5884da2c647a93e788bbcddf2d8d47a9a7997ef71cf1e5b46fad7c2c8b90",
-      "linux/arm64": "docker.io/nextcloud:30@sha256:ab3b5884da2c647a93e788bbcddf2d8d47a9a7997ef71cf1e5b46fad7c2c8b90"
+      "linux/amd64": "docker.io/nextcloud:30@sha256:0a25cac4d3d6457f7e7418e9bc38733f0cf745c8367f148049547237003e7d63",
+      "linux/arm64": "docker.io/nextcloud:30@sha256:0a25cac4d3d6457f7e7418e9bc38733f0cf745c8367f148049547237003e7d63"
     },
     "30.0": {
-      "linux/amd64": "docker.io/nextcloud:30.0@sha256:ab3b5884da2c647a93e788bbcddf2d8d47a9a7997ef71cf1e5b46fad7c2c8b90",
-      "linux/arm64": "docker.io/nextcloud:30.0@sha256:ab3b5884da2c647a93e788bbcddf2d8d47a9a7997ef71cf1e5b46fad7c2c8b90"
+      "linux/amd64": "docker.io/nextcloud:30.0@sha256:0a25cac4d3d6457f7e7418e9bc38733f0cf745c8367f148049547237003e7d63",
+      "linux/arm64": "docker.io/nextcloud:30.0@sha256:0a25cac4d3d6457f7e7418e9bc38733f0cf745c8367f148049547237003e7d63"
     },
     "31": {
-      "linux/amd64": "docker.io/nextcloud:31@sha256:92bc503ea0c19789f402b0469ecfb8df1ffea81e2bf90a45bba39063a626aa00",
-      "linux/arm64": "docker.io/nextcloud:31@sha256:92bc503ea0c19789f402b0469ecfb8df1ffea81e2bf90a45bba39063a626aa00"
+      "linux/amd64": "docker.io/nextcloud:31@sha256:11f158050216614d585886600445e0a1b75ee224d6a6dddc5eba996cc9499fa6",
+      "linux/arm64": "docker.io/nextcloud:31@sha256:11f158050216614d585886600445e0a1b75ee224d6a6dddc5eba996cc9499fa6"
     },
     "31.0": {
-      "linux/amd64": "docker.io/nextcloud:31.0@sha256:92bc503ea0c19789f402b0469ecfb8df1ffea81e2bf90a45bba39063a626aa00",
-      "linux/arm64": "docker.io/nextcloud:31.0@sha256:92bc503ea0c19789f402b0469ecfb8df1ffea81e2bf90a45bba39063a626aa00"
+      "linux/amd64": "docker.io/nextcloud:31.0@sha256:11f158050216614d585886600445e0a1b75ee224d6a6dddc5eba996cc9499fa6",
+      "linux/arm64": "docker.io/nextcloud:31.0@sha256:11f158050216614d585886600445e0a1b75ee224d6a6dddc5eba996cc9499fa6"
     }
   },
   "docker.io/plexinc/pms-docker": {
@@ -147,12 +147,12 @@
   },
   "ghcr.io/open-webui/open-webui": {
     "0.6": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:0.6@sha256:4fe25c664d4d50f98f21594f12b59612bf7f5cabcff8e516c5c8521193d9c498",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:0.6@sha256:4fe25c664d4d50f98f21594f12b59612bf7f5cabcff8e516c5c8521193d9c498"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.6@sha256:b9f7930a5eea6a3284f45ab6d20f9e1e02a5cd6da6b57b962b05422de5233f23",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.6@sha256:b9f7930a5eea6a3284f45ab6d20f9e1e02a5cd6da6b57b962b05422de5233f23"
     },
     "0.6-ollama": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:0.6-ollama@sha256:73090702e606ab83436bb85d650b508481a1d0855d96c89516469f3c600be2d1",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:0.6-ollama@sha256:73090702e606ab83436bb85d650b508481a1d0855d96c89516469f3c600be2d1"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.6-ollama@sha256:231d59a988fa0f31c156be9f18df83712b50b17a30485daa70cee46929bbebb4",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.6-ollama@sha256:231d59a988fa0f31c156be9f18df83712b50b17a30485daa70cee46929bbebb4"
     },
     "0.6.22": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:0.6.22@sha256:fb739f0e9cb0b51d66f0c43bab8bab00960dac38804a243aca1323a563add9cd",
