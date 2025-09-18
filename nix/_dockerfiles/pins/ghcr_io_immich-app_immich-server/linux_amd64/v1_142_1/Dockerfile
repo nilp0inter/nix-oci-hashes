@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 ghcr.io/immich-app/immich-server:v1.142.1
+FROM --platform=linux/amd64 ghcr.io/immich-app/immich-server:v1.142.1@sha256:06bc7715fa4c4a1641bd0b566c949cd7327f420632b480389fd4d1e70665d046
