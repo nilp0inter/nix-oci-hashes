@@ -73,8 +73,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:570a1d865d47694677e744cd246b56dd6b666c02377fe42a2f335ae7c4544e02"
     },
     "stable": {
-      "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:eb160de0b0ff449434ae853c6ab5b64c86936af136309297c977f21fa10be57f",
-      "linux/arm64": "docker.io/n8nio/n8n:stable@sha256:eb160de0b0ff449434ae853c6ab5b64c86936af136309297c977f21fa10be57f"
+      "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:57f95a26b1b28527053fba6316d9d046395d9b4da9d0da486e838384a38fcf37",
+      "linux/arm64": "docker.io/n8nio/n8n:stable@sha256:57f95a26b1b28527053fba6316d9d046395d9b4da9d0da486e838384a38fcf37"
     }
   },
   "docker.io/nextcloud": {
@@ -199,8 +199,8 @@
       "linux/arm64": "ghcr.io/open-webui/open-webui:0.6.32@sha256:412334cec4b49ed51bfa9a6d28d1fbf3d5622c3ac42f57736e7d5d2bf5f3e94a"
     },
     "main": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:2b382ae46ba32ecb1a916541cdcb08fe1303f940a9e7323a60df28d868bd67f3",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:2b382ae46ba32ecb1a916541cdcb08fe1303f940a9e7323a60df28d868bd67f3"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:c77fa8da6d702ed064b36d414a9493e0bc5242d9a5a3ea0828c5013cbf35b1d5",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:c77fa8da6d702ed064b36d414a9493e0bc5242d9a5a3ea0828c5013cbf35b1d5"
     },
     "main-ollama": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:main-ollama@sha256:c3712bfe8e4e9a435ddf88cae142a6a7a41230592cfddb641809d3356c37099b",
