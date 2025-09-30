@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 ghcr.io/immich-app/immich-server:v1.143.1
+FROM --platform=linux/amd64 ghcr.io/immich-app/immich-server:v1.144.1
