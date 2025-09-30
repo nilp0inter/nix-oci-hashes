@@ -1,1 +1,1 @@
-FROM --platform=linux/arm64 docker.io/nextcloud:31.0
+FROM --platform=linux/arm64 docker.io/nextcloud:32.0
