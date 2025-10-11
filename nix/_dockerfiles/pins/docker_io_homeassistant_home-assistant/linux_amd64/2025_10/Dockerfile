@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 docker.io/homeassistant/home-assistant:2025.10@sha256:9255033272ab8f7bede246109ea9e7302527faf3accbf2ba7ef619e2206107ad
+FROM --platform=linux/amd64 docker.io/homeassistant/home-assistant:2025.10@sha256:5ae78cf2e6d8b53439cac50ed184ff1336cfbbb878fce16f75589e048fcdcdd9
