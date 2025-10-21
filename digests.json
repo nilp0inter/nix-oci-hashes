@@ -97,8 +97,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:721f9c66b850580cfb56f83baaa8f7398c8ec5d873c62d59666af796bba10729"
     },
     "stable": {
-      "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:fa410b71ccb5ddee9f9e4b25a964fbc8fcf56744d5f24dc4d2b8b414ae76ee26",
-      "linux/arm64": "docker.io/n8nio/n8n:stable@sha256:fa410b71ccb5ddee9f9e4b25a964fbc8fcf56744d5f24dc4d2b8b414ae76ee26"
+      "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:14248a2a18487c3e1669d2e2bfeee797f0648f606e0c168e36ef20c3a1f47eac",
+      "linux/arm64": "docker.io/n8nio/n8n:stable@sha256:14248a2a18487c3e1669d2e2bfeee797f0648f606e0c168e36ef20c3a1f47eac"
     }
   },
   "docker.io/nextcloud": {
@@ -107,8 +107,8 @@
       "linux/arm64": "docker.io/nextcloud:30@sha256:c8e502dc14f5f46288fbb516742ed5c3321f370bc950ebf4145e6801e257d0a5"
     },
     "30.0": {
-      "linux/amd64": "docker.io/nextcloud:30.0@sha256:6deb000b8628029a2899f2f35f155a590a3346ad3cdb3394ce77bcf16f7c8eb1",
-      "linux/arm64": "docker.io/nextcloud:30.0@sha256:6deb000b8628029a2899f2f35f155a590a3346ad3cdb3394ce77bcf16f7c8eb1"
+      "linux/amd64": "docker.io/nextcloud:30.0@sha256:016be1c7f827a30f35d3295f2424e99cc482fcc2dcf160b9e8e6a7a904aae059",
+      "linux/arm64": "docker.io/nextcloud:30.0@sha256:016be1c7f827a30f35d3295f2424e99cc482fcc2dcf160b9e8e6a7a904aae059"
     },
     "31": {
       "linux/amd64": "docker.io/nextcloud:31@sha256:c05096c9f9c9141438be9270b4ee2ec80c927673e83a088c3a76d27b783d5aed",
