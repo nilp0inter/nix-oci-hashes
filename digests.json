@@ -93,8 +93,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:1.108.1@sha256:8509288ac9c0591ddb8a4e4a8e432e003f3cc91bf492cfed6e2c8125c3de3a94"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:721f9c66b850580cfb56f83baaa8f7398c8ec5d873c62d59666af796bba10729",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:721f9c66b850580cfb56f83baaa8f7398c8ec5d873c62d59666af796bba10729"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:dd5d5c10e8e960a2b68af8e0f61c99afb8f86b65245916f8baf5a9a44a789e07",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:dd5d5c10e8e960a2b68af8e0f61c99afb8f86b65245916f8baf5a9a44a789e07"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:14248a2a18487c3e1669d2e2bfeee797f0648f606e0c168e36ef20c3a1f47eac",
@@ -107,12 +107,12 @@
       "linux/arm64": "docker.io/nextcloud:30@sha256:c8e502dc14f5f46288fbb516742ed5c3321f370bc950ebf4145e6801e257d0a5"
     },
     "30.0": {
-      "linux/amd64": "docker.io/nextcloud:30.0@sha256:016be1c7f827a30f35d3295f2424e99cc482fcc2dcf160b9e8e6a7a904aae059",
-      "linux/arm64": "docker.io/nextcloud:30.0@sha256:016be1c7f827a30f35d3295f2424e99cc482fcc2dcf160b9e8e6a7a904aae059"
+      "linux/amd64": "docker.io/nextcloud:30.0@sha256:c5f3f451e943d8f7baa61bae34e2b63ea83ab5f375c15407ba86c2a73eac5e69",
+      "linux/arm64": "docker.io/nextcloud:30.0@sha256:c5f3f451e943d8f7baa61bae34e2b63ea83ab5f375c15407ba86c2a73eac5e69"
     },
     "31": {
-      "linux/amd64": "docker.io/nextcloud:31@sha256:f169460f94da34f2f88f3a65d2d1558202f6c4aaa7b3d7d1736b1107e635190d",
-      "linux/arm64": "docker.io/nextcloud:31@sha256:f169460f94da34f2f88f3a65d2d1558202f6c4aaa7b3d7d1736b1107e635190d"
+      "linux/amd64": "docker.io/nextcloud:31@sha256:fdab7bfc1b35255e442ed207bca277a45495fb115f297a97711e0880167f833b",
+      "linux/arm64": "docker.io/nextcloud:31@sha256:fdab7bfc1b35255e442ed207bca277a45495fb115f297a97711e0880167f833b"
     },
     "31.0": {
       "linux/amd64": "docker.io/nextcloud:31.0@sha256:f169460f94da34f2f88f3a65d2d1558202f6c4aaa7b3d7d1736b1107e635190d",
