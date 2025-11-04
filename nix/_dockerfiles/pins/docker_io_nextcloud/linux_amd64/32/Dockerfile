@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 docker.io/nextcloud:32@sha256:3325758213ae61f2226dd0aa256db6a654e37a02df7efd1fa03085333513a3a3
+FROM --platform=linux/amd64 docker.io/nextcloud:32@sha256:dcff1461f1c34a00cd123e13f1b80127ee3dc5438267ecffa77d4b5cd8366be6
