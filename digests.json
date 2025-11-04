@@ -119,20 +119,20 @@
       "linux/arm64": "docker.io/nextcloud:30@sha256:c8e502dc14f5f46288fbb516742ed5c3321f370bc950ebf4145e6801e257d0a5"
     },
     "30.0": {
-      "linux/amd64": "docker.io/nextcloud:30.0@sha256:538379eb8079225c6fc0f0e8925fb63a297842eb374b214177a709d75de2eba4",
-      "linux/arm64": "docker.io/nextcloud:30.0@sha256:538379eb8079225c6fc0f0e8925fb63a297842eb374b214177a709d75de2eba4"
+      "linux/amd64": "docker.io/nextcloud:30.0@sha256:22e3d1e30e4be651b5f0f45ca677899ecfb82f36741cf616245de2f8c83e7ccb",
+      "linux/arm64": "docker.io/nextcloud:30.0@sha256:22e3d1e30e4be651b5f0f45ca677899ecfb82f36741cf616245de2f8c83e7ccb"
     },
     "31": {
-      "linux/amd64": "docker.io/nextcloud:31@sha256:f70365d99541eab2efacae7026315838b14c05c8c3a0399696bfaa3e786a8784",
-      "linux/arm64": "docker.io/nextcloud:31@sha256:f70365d99541eab2efacae7026315838b14c05c8c3a0399696bfaa3e786a8784"
+      "linux/amd64": "docker.io/nextcloud:31@sha256:45d2034d2766c628f8c095c944c39fa97b28b2781a1f08829dc2de7248ebe076",
+      "linux/arm64": "docker.io/nextcloud:31@sha256:45d2034d2766c628f8c095c944c39fa97b28b2781a1f08829dc2de7248ebe076"
     },
     "31.0": {
       "linux/amd64": "docker.io/nextcloud:31.0@sha256:fdab7bfc1b35255e442ed207bca277a45495fb115f297a97711e0880167f833b",
       "linux/arm64": "docker.io/nextcloud:31.0@sha256:fdab7bfc1b35255e442ed207bca277a45495fb115f297a97711e0880167f833b"
     },
     "32": {
-      "linux/amd64": "docker.io/nextcloud:32@sha256:1e4eae55eebe094cae6f9e7b6e0b4bccf4a4fe7b7e6f6f8f57010994b3b2ee42",
-      "linux/arm64": "docker.io/nextcloud:32@sha256:1e4eae55eebe094cae6f9e7b6e0b4bccf4a4fe7b7e6f6f8f57010994b3b2ee42"
+      "linux/amd64": "docker.io/nextcloud:32@sha256:3325758213ae61f2226dd0aa256db6a654e37a02df7efd1fa03085333513a3a3",
+      "linux/arm64": "docker.io/nextcloud:32@sha256:3325758213ae61f2226dd0aa256db6a654e37a02df7efd1fa03085333513a3a3"
     },
     "32.0": {
       "linux/amd64": "docker.io/nextcloud:32.0@sha256:1e4eae55eebe094cae6f9e7b6e0b4bccf4a4fe7b7e6f6f8f57010994b3b2ee42",
