@@ -317,6 +317,10 @@
     "v0.6.31": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.6.31@sha256:807a4e918d5ffddebc5ac6ff1b9c0966162be366691852d3b96983305b43fd5e",
       "linux/arm64": "ghcr.io/open-webui/open-webui:v0.6.31@sha256:807a4e918d5ffddebc5ac6ff1b9c0966162be366691852d3b96983305b43fd5e"
+    },
+    "v0.6.36": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.6.36@sha256:dfe43b30a5474164b1a81e1cce298a6769bb22144f74df556beefee4ccca5394",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.6.36@sha256:dfe43b30a5474164b1a81e1cce298a6769bb22144f74df556beefee4ccca5394"
     }
   },
   "ghcr.io/paperless-ngx/paperless-ngx": {
@@ -359,6 +363,10 @@
     "2.19.4": {
       "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.19.4@sha256:7ec0797af256194f6e117d1b7ed3ef91ad31b4a14bf3092abdee6bb74f6b3656",
       "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.19.4@sha256:7ec0797af256194f6e117d1b7ed3ef91ad31b4a14bf3092abdee6bb74f6b3656"
+    },
+    "2.19.5": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.19.5@sha256:5f2a72fd7be42c6b1d8fa1751606a140452d4c3e6e829ae6b1b15e3c95129481",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.19.5@sha256:5f2a72fd7be42c6b1d8fa1751606a140452d4c3e6e829ae6b1b15e3c95129481"
     }
   }
 }
