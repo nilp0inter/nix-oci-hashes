@@ -319,8 +319,8 @@
       "linux/arm64": "ghcr.io/open-webui/open-webui:0.6.35@sha256:587063c2f2f50a6d8e77951a5f98b2fc456a149e7315a47b27b5c9c972ba3f42"
     },
     "main": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:53a4d2fc8c7a7cc620cd18e6fe416ed9940f2db87fddf837e3aa55111bec6995",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:53a4d2fc8c7a7cc620cd18e6fe416ed9940f2db87fddf837e3aa55111bec6995"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:d1ffcfc4fa8aa8ef1caf2bf638e1a62ec8c26d25f2279a2279b95fde6502debb",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:d1ffcfc4fa8aa8ef1caf2bf638e1a62ec8c26d25f2279a2279b95fde6502debb"
     },
     "main-ollama": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:main-ollama@sha256:c3712bfe8e4e9a435ddf88cae142a6a7a41230592cfddb641809d3356c37099b",
