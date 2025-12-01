@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 docker.io/jellyfin/jellyfin:10.11.3
+FROM --platform=linux/amd64 docker.io/jellyfin/jellyfin:10.11.4
