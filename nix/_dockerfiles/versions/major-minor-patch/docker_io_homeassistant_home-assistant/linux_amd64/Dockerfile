@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 docker.io/homeassistant/home-assistant:2025.11.3
+FROM --platform=linux/amd64 docker.io/homeassistant/home-assistant:2025.12.0
