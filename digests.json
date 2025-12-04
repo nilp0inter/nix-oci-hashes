@@ -44,6 +44,14 @@
       "linux/amd64": "docker.io/homeassistant/home-assistant:2025.11.3@sha256:f971850a6ec1fb5c5fd4e1748058e9e1f589aaf0da933b8d88bb5dee03f5b5e8",
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.11.3@sha256:f971850a6ec1fb5c5fd4e1748058e9e1f589aaf0da933b8d88bb5dee03f5b5e8"
     },
+    "2025.12": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.12@sha256:8951fcbb794da8f261e1639c668639bc90f9520b48099b5715f6d5fbfef08a0e",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.12@sha256:8951fcbb794da8f261e1639c668639bc90f9520b48099b5715f6d5fbfef08a0e"
+    },
+    "2025.12.0": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.12.0@sha256:8951fcbb794da8f261e1639c668639bc90f9520b48099b5715f6d5fbfef08a0e",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.12.0@sha256:8951fcbb794da8f261e1639c668639bc90f9520b48099b5715f6d5fbfef08a0e"
+    },
     "2025.8": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2025.8@sha256:2eb83307a08de3287822b648fce4cbf1364423b55f2af623c149c6b21c2cef00",
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.8@sha256:2eb83307a08de3287822b648fce4cbf1364423b55f2af623c149c6b21c2cef00"
@@ -131,6 +139,10 @@
     "1.108.1": {
       "linux/amd64": "docker.io/n8nio/n8n:1.108.1@sha256:8509288ac9c0591ddb8a4e4a8e432e003f3cc91bf492cfed6e2c8125c3de3a94",
       "linux/arm64": "docker.io/n8nio/n8n:1.108.1@sha256:8509288ac9c0591ddb8a4e4a8e432e003f3cc91bf492cfed6e2c8125c3de3a94"
+    },
+    "1.123.1": {
+      "linux/amd64": "docker.io/n8nio/n8n:1.123.1@sha256:cbb838c888f8d849afcb855d34390c6644ebad2c51010a0a12c3b83960a5b3f7",
+      "linux/arm64": "docker.io/n8nio/n8n:1.123.1@sha256:cbb838c888f8d849afcb855d34390c6644ebad2c51010a0a12c3b83960a5b3f7"
     },
     "nightly": {
       "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:7844f7a10367f9a1863a99dee49742195ce7fe7f966ad4231d6a6f4ec99dd139",
@@ -329,6 +341,10 @@
     "0.6.40": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:0.6.40@sha256:c13ea534284fa52b282fb2780ffc34a42cc66495234789be8327a9f3d35b53dd",
       "linux/arm64": "ghcr.io/open-webui/open-webui:0.6.40@sha256:c13ea534284fa52b282fb2780ffc34a42cc66495234789be8327a9f3d35b53dd"
+    },
+    "0.6.41": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.6.41@sha256:3e07bcede92e97cc3e741de095045a8b5d20bc257ecdb713bd2a47f68e9dff72",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.6.41@sha256:3e07bcede92e97cc3e741de095045a8b5d20bc257ecdb713bd2a47f68e9dff72"
     },
     "main": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:c8e04b9319257448fa4e7ad140cb6596994217ec83d6e7656ccba649bf557318",
