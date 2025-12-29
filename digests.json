@@ -45,8 +45,8 @@
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.11.3@sha256:f971850a6ec1fb5c5fd4e1748058e9e1f589aaf0da933b8d88bb5dee03f5b5e8"
     },
     "2025.12": {
-      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.12@sha256:75ef6851d2e48d366764cdb6b569b7ad8be77dcc8e0d1b9aa508ac90e42d4c58",
-      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.12@sha256:75ef6851d2e48d366764cdb6b569b7ad8be77dcc8e0d1b9aa508ac90e42d4c58"
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2025.12@sha256:9a5a3eb4a213dfb25932dee9dc6815c9305f78cecb5afa716fa2483163d8fb5b",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2025.12@sha256:9a5a3eb4a213dfb25932dee9dc6815c9305f78cecb5afa716fa2483163d8fb5b"
     },
     "2025.12.0": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2025.12.0@sha256:8951fcbb794da8f261e1639c668639bc90f9520b48099b5715f6d5fbfef08a0e",
