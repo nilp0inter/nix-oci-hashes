@@ -107,6 +107,10 @@
     "2026.1.0": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2026.1.0@sha256:97d63b3d0028b6b52ad8e5ac7b014c3404e69bf1656b5489eec48b59184e0bc7",
       "linux/arm64": "docker.io/homeassistant/home-assistant:2026.1.0@sha256:97d63b3d0028b6b52ad8e5ac7b014c3404e69bf1656b5489eec48b59184e0bc7"
+    },
+    "2026.1.1": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.1.1@sha256:bf1602fc889bc4e6e4c1ccf9e6657f0be968bda13e1a4d1299e3dbe0ccf9a23b",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.1.1@sha256:bf1602fc889bc4e6e4c1ccf9e6657f0be968bda13e1a4d1299e3dbe0ccf9a23b"
     }
   },
   "docker.io/jellyfin/jellyfin": {
@@ -220,6 +224,10 @@
       "linux/amd64": "docker.io/n8nio/n8n:2.3.1@sha256:890d7ed6591eeb25f3bd34fcafcad5d8ae6d7d452484801f6b8d0995d148d36e",
       "linux/arm64": "docker.io/n8nio/n8n:2.3.1@sha256:890d7ed6591eeb25f3bd34fcafcad5d8ae6d7d452484801f6b8d0995d148d36e"
     },
+    "2.4.3": {
+      "linux/amd64": "docker.io/n8nio/n8n:2.4.3@sha256:fec47431bce7d3fd5106e82090ebaa275261886e5339ab13dd503462fdaac291",
+      "linux/arm64": "docker.io/n8nio/n8n:2.4.3@sha256:fec47431bce7d3fd5106e82090ebaa275261886e5339ab13dd503462fdaac291"
+    },
     "nightly": {
       "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:3dd6e88d468c2245789911d6398745be410966b715a82625cd5f0e3a368d5453",
       "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:3dd6e88d468c2245789911d6398745be410966b715a82625cd5f0e3a368d5453"
@@ -277,6 +285,10 @@
     "1.35.1": {
       "linux/amd64": "docker.io/vaultwarden/server:1.35.1@sha256:1d43c6754a030861f960fd4dab47e1b33fc19f05bd5f8f597ab7236465a6f14b",
       "linux/arm64": "docker.io/vaultwarden/server:1.35.1@sha256:1d43c6754a030861f960fd4dab47e1b33fc19f05bd5f8f597ab7236465a6f14b"
+    },
+    "1.35.2": {
+      "linux/amd64": "docker.io/vaultwarden/server:1.35.2@sha256:d89a6d21e361254670c24a4272b4b5f245e402c284f2f55de2c379fdbcfa1fa5",
+      "linux/arm64": "docker.io/vaultwarden/server:1.35.2@sha256:d89a6d21e361254670c24a4272b4b5f245e402c284f2f55de2c379fdbcfa1fa5"
     }
   },
   "ghcr.io/immich-app/immich-server": {
@@ -446,6 +458,14 @@
       "linux/amd64": "ghcr.io/open-webui/open-webui:0.6.43@sha256:9cb724e0bc84f05ba2f81a3da5f53f5add07e1001065d83f3b6b70b9a9eeef19",
       "linux/arm64": "ghcr.io/open-webui/open-webui:0.6.43@sha256:9cb724e0bc84f05ba2f81a3da5f53f5add07e1001065d83f3b6b70b9a9eeef19"
     },
+    "0.7": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.7@sha256:16d9a3615b45f14a0c89f7ad7a3bf151f923ed32c2e68f9204eb17d1ce40774b",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.7@sha256:16d9a3615b45f14a0c89f7ad7a3bf151f923ed32c2e68f9204eb17d1ce40774b"
+    },
+    "0.7.2": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.7.2@sha256:16d9a3615b45f14a0c89f7ad7a3bf151f923ed32c2e68f9204eb17d1ce40774b",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.7.2@sha256:16d9a3615b45f14a0c89f7ad7a3bf151f923ed32c2e68f9204eb17d1ce40774b"
+    },
     "main": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:000b87a6ae726aa7f6611a0064ba528ba1a6aff6ead5fb3b6c89fd4a5717eb8a",
       "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:000b87a6ae726aa7f6611a0064ba528ba1a6aff6ead5fb3b6c89fd4a5717eb8a"
@@ -543,6 +563,10 @@
     "2.20.3": {
       "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.3@sha256:57ad9565bff3bdf2378ab1dcc21ea649dfd68ee58e0eeca2bfba0120a26563e8",
       "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.3@sha256:57ad9565bff3bdf2378ab1dcc21ea649dfd68ee58e0eeca2bfba0120a26563e8"
+    },
+    "2.20.4": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.4@sha256:06ca6a6c2a21cfebcc7c5f2e0d38f892dba4bcb090b8781a55d003c63cce386a",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.4@sha256:06ca6a6c2a21cfebcc7c5f2e0d38f892dba4bcb090b8781a55d003c63cce386a"
     }
   }
 }
