@@ -101,8 +101,8 @@
       "linux/arm64": "docker.io/homeassistant/home-assistant:2025.9.4@sha256:89ec0583c7f47c8a150204f6b5ed48b5432026012bebe1226cf72775a795a5e1"
     },
     "2026.1": {
-      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.1@sha256:bf1602fc889bc4e6e4c1ccf9e6657f0be968bda13e1a4d1299e3dbe0ccf9a23b",
-      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.1@sha256:bf1602fc889bc4e6e4c1ccf9e6657f0be968bda13e1a4d1299e3dbe0ccf9a23b"
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.1@sha256:3007eeeaf87d1e3a2047faeac6ff01dfef218b8a404bdff3ce421c1f4f363a43",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.1@sha256:3007eeeaf87d1e3a2047faeac6ff01dfef218b8a404bdff3ce421c1f4f363a43"
     },
     "2026.1.0": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2026.1.0@sha256:97d63b3d0028b6b52ad8e5ac7b014c3404e69bf1656b5489eec48b59184e0bc7",
@@ -233,8 +233,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:2.4.4@sha256:69226d5f1eb13bc303418730939799239fa96545513f571f2890442b77c7a522"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:3dd6e88d468c2245789911d6398745be410966b715a82625cd5f0e3a368d5453",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:3dd6e88d468c2245789911d6398745be410966b715a82625cd5f0e3a368d5453"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:45ec70c618d4ea8058d8f997f89459975389694dadb6e967b838e49b356f0925",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:45ec70c618d4ea8058d8f997f89459975389694dadb6e967b838e49b356f0925"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:37d6559a03d8d24a01317148aca3909686e76527bb5f84387ff7cf2ce04bb09d",
