@@ -245,8 +245,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:2.5.0@sha256:9d39c4702a3dc94e57e8627cf5e02c679db04d5ffe604404d8d7fc2cdf998313"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:8eab9f1af241da1bced75a79f3b30526a8a6c835449c9db74b7927fb20243dc7",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:8eab9f1af241da1bced75a79f3b30526a8a6c835449c9db74b7927fb20243dc7"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:6bb9dde46c18322fc903977b5de0a2a7a58b84836cccb0effd196b022d98fd76",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:6bb9dde46c18322fc903977b5de0a2a7a58b84836cccb0effd196b022d98fd76"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:69226d5f1eb13bc303418730939799239fa96545513f571f2890442b77c7a522",
@@ -585,8 +585,8 @@
       "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.4@sha256:06ca6a6c2a21cfebcc7c5f2e0d38f892dba4bcb090b8781a55d003c63cce386a"
     },
     "2.20.5": {
-      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.5@sha256:59521628c3b4aa4e37c976924f74c30e507acd89eea2dbc74f13f0354159f536",
-      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.5@sha256:59521628c3b4aa4e37c976924f74c30e507acd89eea2dbc74f13f0354159f536"
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.5@sha256:665f2f5cc5482ea2e44f90a7fa170908aaeb95d8d3c70e17f746de8fcb81f644",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.5@sha256:665f2f5cc5482ea2e44f90a7fa170908aaeb95d8d3c70e17f746de8fcb81f644"
     }
   }
 }
