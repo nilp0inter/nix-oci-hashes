@@ -265,8 +265,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:2.6.1@sha256:f3214c30a15cd94eb55b3bc6400c402e38e43175f57c678bebc56091a72b73f3"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:78174e5773ab7ea1cfbbd12f8ff321cbbf7b5ca9efb5e17d6974f6a064e6a0bd",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:78174e5773ab7ea1cfbbd12f8ff321cbbf7b5ca9efb5e17d6974f6a064e6a0bd"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:8c8798146ad0145e8b81bac2abb328737c5936dadd58534dbafd435e3dd2570f",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:8c8798146ad0145e8b81bac2abb328737c5936dadd58534dbafd435e3dd2570f"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:b4ce485c070c95efae9f42fa39918623f821d70ea255cdf6467b02865db3a00e",
@@ -305,8 +305,8 @@
       "linux/arm64": "docker.io/plexinc/pms-docker:1.42.1.10060-4e8b05daf@sha256:4e704a2172129d8a6bc5b05ea201945b329bb6512f48a4e92ed4a4a787c35462"
     },
     "latest": {
-      "linux/amd64": "docker.io/plexinc/pms-docker:latest@sha256:9c03c26b9479ba9a09935f3367459bfdc8d21545f42ed2a13258983c5be1b252",
-      "linux/arm64": "docker.io/plexinc/pms-docker:latest@sha256:9c03c26b9479ba9a09935f3367459bfdc8d21545f42ed2a13258983c5be1b252"
+      "linux/amd64": "docker.io/plexinc/pms-docker:latest@sha256:d38767ec3b948e860bcf1abfe16512bd638e6ac01230f5b65b64e2ef09052267",
+      "linux/arm64": "docker.io/plexinc/pms-docker:latest@sha256:d38767ec3b948e860bcf1abfe16512bd638e6ac01230f5b65b64e2ef09052267"
     }
   },
   "docker.io/vaultwarden/server": {
