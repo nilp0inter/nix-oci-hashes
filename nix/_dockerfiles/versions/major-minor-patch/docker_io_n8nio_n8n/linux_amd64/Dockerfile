@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 docker.io/n8nio/n8n:2.7.0
+FROM --platform=linux/amd64 docker.io/n8nio/n8n:2.7.1
