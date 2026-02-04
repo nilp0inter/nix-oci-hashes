@@ -281,8 +281,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:2.7.1@sha256:3ed9f3bc9b77bc79e6e847edf63317381d4f2dc631f8300a0af96385fd944a13"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:2102013e44607d6890508fbb3f0c5085d5f8d6433cfd037ac2b2f8f6197296a6",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:2102013e44607d6890508fbb3f0c5085d5f8d6433cfd037ac2b2f8f6197296a6"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:6024300ae572c96469fdef2ad07f189139a5dea71ea3d2d965632f8e7a54e776",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:6024300ae572c96469fdef2ad07f189139a5dea71ea3d2d965632f8e7a54e776"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:a9beb0dcaa547f0742a322f497af72127338d6ab8f3697b3be44f8ab737726f2",
