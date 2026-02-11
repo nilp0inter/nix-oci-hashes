@@ -1,1 +1,1 @@
-FROM --platform=linux/arm64 docker.io/plexinc/pms-docker:latest@sha256:d38767ec3b948e860bcf1abfe16512bd638e6ac01230f5b65b64e2ef09052267
+FROM --platform=linux/arm64 docker.io/plexinc/pms-docker:latest@sha256:1131c4cd21fa22f8196f749f1dbb69af306776c3c83c7f5b061e51dc49bcff7f
