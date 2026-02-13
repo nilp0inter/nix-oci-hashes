@@ -1,1 +1,1 @@
-FROM --platform=linux/arm64 ghcr.io/open-webui/open-webui:0.7.2
+FROM --platform=linux/arm64 ghcr.io/open-webui/open-webui:v0.8.0
