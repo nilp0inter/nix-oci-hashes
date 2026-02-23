@@ -1,1 +1,1 @@
-FROM --platform=linux/amd64 ghcr.io/open-webui/open-webui:main-ollama@sha256:5881160acc10f991eceaed00a65137870fa4af1c877a07e75f884dbe4c268149
+FROM --platform=linux/amd64 ghcr.io/open-webui/open-webui:main-ollama@sha256:e77936487eed2e6db784bb7daa8eba0e197eb46ebd8fd03f59a41b086ac4101a
