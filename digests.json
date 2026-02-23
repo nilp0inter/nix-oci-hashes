@@ -332,6 +332,10 @@
       "linux/amd64": "docker.io/n8nio/n8n:2.9.1@sha256:7fc6bfb986401011cb9e7dc08389f8b8f51330a7bd0a0b7acef832b47839b9f3",
       "linux/arm64": "docker.io/n8nio/n8n:2.9.1@sha256:7fc6bfb986401011cb9e7dc08389f8b8f51330a7bd0a0b7acef832b47839b9f3"
     },
+    "2.9.2": {
+      "linux/amd64": "docker.io/n8nio/n8n:2.9.2@sha256:52bc65540cbfb6f8b5320bafaf28bcc018ae08124bb0a7cbf5ca7f044b54d698",
+      "linux/arm64": "docker.io/n8nio/n8n:2.9.2@sha256:52bc65540cbfb6f8b5320bafaf28bcc018ae08124bb0a7cbf5ca7f044b54d698"
+    },
     "nightly": {
       "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:b183eb94069c0c76c24d084802a2490b182beac4b01f24fa5281cb9979c0f136",
       "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:b183eb94069c0c76c24d084802a2490b182beac4b01f24fa5281cb9979c0f136"
@@ -649,6 +653,10 @@
     "v0.8.4": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.4@sha256:99968cab5b6d53581a941f7d6b45ca2979925e10557d2ed3da93f1b81eae5faa",
       "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.4@sha256:99968cab5b6d53581a941f7d6b45ca2979925e10557d2ed3da93f1b81eae5faa"
+    },
+    "v0.8.5": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.5@sha256:2deb90b0423473d8f97febced2e62b8fd898aa3eb61877bb3aa336370214c258",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.5@sha256:2deb90b0423473d8f97febced2e62b8fd898aa3eb61877bb3aa336370214c258"
     }
   },
   "ghcr.io/paperless-ngx/paperless-ngx": {
