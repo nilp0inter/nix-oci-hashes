@@ -377,6 +377,14 @@
     "32.0": {
       "linux/amd64": "docker.io/nextcloud:32.0@sha256:dcf9c6019d05df721bb7bada99748964c95446ea479771e9073ceaded733407e",
       "linux/arm64": "docker.io/nextcloud:32.0@sha256:dcf9c6019d05df721bb7bada99748964c95446ea479771e9073ceaded733407e"
+    },
+    "33": {
+      "linux/amd64": "docker.io/nextcloud:33@sha256:ff2cbaab14c85e587b5541e3aff4216a8a484e06424ebae661581937c0c8da0c",
+      "linux/arm64": "docker.io/nextcloud:33@sha256:ff2cbaab14c85e587b5541e3aff4216a8a484e06424ebae661581937c0c8da0c"
+    },
+    "33.0": {
+      "linux/amd64": "docker.io/nextcloud:33.0@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb",
+      "linux/arm64": "docker.io/nextcloud:33.0@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb"
     }
   },
   "docker.io/plexinc/pms-docker": {
