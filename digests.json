@@ -369,8 +369,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:2.9.2@sha256:52bc65540cbfb6f8b5320bafaf28bcc018ae08124bb0a7cbf5ca7f044b54d698"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:160e5ae9c2334793a0469d1f5925499de96cc4613f7798b38cb302debeb5df8f",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:160e5ae9c2334793a0469d1f5925499de96cc4613f7798b38cb302debeb5df8f"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:6b2e38bf609c279427f9da35cb353621fc628fb42fe899b8b63f69009ea289cc",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:6b2e38bf609c279427f9da35cb353621fc628fb42fe899b8b63f69009ea289cc"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:4dfbc931452471c15a760b987711d37364470344db47f1546f98402728e77612",
@@ -643,16 +643,16 @@
       "linux/arm64": "ghcr.io/open-webui/open-webui:0.7.2@sha256:16d9a3615b45f14a0c89f7ad7a3bf151f923ed32c2e68f9204eb17d1ce40774b"
     },
     "0.8": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:0.8@sha256:4320d38874dd6f43fc865209b1d5b1fae903055a7fa56de8c2493bf836f7920a",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:0.8@sha256:4320d38874dd6f43fc865209b1d5b1fae903055a7fa56de8c2493bf836f7920a"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.8@sha256:ee057955040ce91e3e787e4b7978c9c23e828972c68d01d787ed40f9a307df9f",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.8@sha256:ee057955040ce91e3e787e4b7978c9c23e828972c68d01d787ed40f9a307df9f"
     },
     "main": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:10da329d97a958bd379f22b5b18d7bbf94e22433d6bc2f2e1689aed57714e93c",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:10da329d97a958bd379f22b5b18d7bbf94e22433d6bc2f2e1689aed57714e93c"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:b80a96e14bb15ea79aec96fbdad4aeab6b3ee7b61520d83b5dbc8c4f47d433a9",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:b80a96e14bb15ea79aec96fbdad4aeab6b3ee7b61520d83b5dbc8c4f47d433a9"
     },
     "main-ollama": {
-      "linux/amd64": "ghcr.io/open-webui/open-webui:main-ollama@sha256:ede55657f59bd03524eeb737a2ef1e1f37e965c613df87656d0fd7b1ec6efa6d",
-      "linux/arm64": "ghcr.io/open-webui/open-webui:main-ollama@sha256:ede55657f59bd03524eeb737a2ef1e1f37e965c613df87656d0fd7b1ec6efa6d"
+      "linux/amd64": "ghcr.io/open-webui/open-webui:main-ollama@sha256:9458b94269fa5eb83cf09f3843ae1eac7b7e0fc3dbeac9d68c796cbfa9bd3ead",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:main-ollama@sha256:9458b94269fa5eb83cf09f3843ae1eac7b7e0fc3dbeac9d68c796cbfa9bd3ead"
     },
     "v0.6.25": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.6.25@sha256:1c2c3e7e84d5bb0b5471e4de881539cf39e724835a5c53b252518e82ea0c568e",
