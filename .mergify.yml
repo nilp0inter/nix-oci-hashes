@@ -28,7 +28,7 @@ priority_rules:
 queue_rules:
   - name: default
     merge_method: rebase
-  
+
   - name: squash-queue
     merge_method: squash
     commit_message_template: |
@@ -47,9 +47,6 @@ pull_request_rules:
     actions:
       queue:
         name: default  # Rebase - keep multiple commits for transparency
-      delete_head_branch:
-        force: true  # Delete the branch after merge
-
   - name: Auto-merge Renovate digest updates
     conditions:
       - author~=^renovate
@@ -59,8 +56,6 @@ pull_request_rules:
     actions:
       queue:
         name: default  # Rebase - preserve individual commits
-      delete_head_branch:  # Delete the branch after merge
-
   - name: Auto-merge Renovate tag updates
     conditions:
       - author~=^renovate
@@ -70,8 +65,6 @@ pull_request_rules:
     actions:
       queue:
         name: default  # Rebase - preserve individual commits
-      delete_head_branch:  # Delete the branch after merge
-
   - name: Auto-merge GitHub Actions updates
     conditions:
       - author~=^renovate
@@ -80,8 +73,6 @@ pull_request_rules:
     actions:
       queue:
         name: default  # Rebase - preserve individual commits
-      delete_head_branch:  # Delete the branch after merge
-
   - name: Auto-merge Nix flake updates
     conditions:
       - author~=^renovate
@@ -90,4 +81,3 @@ pull_request_rules:
     actions:
       queue:
         name: default  # Rebase - preserve individual commits
-      delete_head_branch:  # Delete the branch after merge
