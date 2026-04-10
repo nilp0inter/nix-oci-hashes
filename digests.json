@@ -433,8 +433,8 @@
       "linux/arm64": "docker.io/plexinc/pms-docker:1.42.1.10060-4e8b05daf@sha256:4e704a2172129d8a6bc5b05ea201945b329bb6512f48a4e92ed4a4a787c35462"
     },
     "latest": {
-      "linux/amd64": "docker.io/plexinc/pms-docker:latest@sha256:80c1c9080352613e77fc2f49bcfee67a0a72cd60b9cf4bbc1b601e55c0160859",
-      "linux/arm64": "docker.io/plexinc/pms-docker:latest@sha256:80c1c9080352613e77fc2f49bcfee67a0a72cd60b9cf4bbc1b601e55c0160859"
+      "linux/amd64": "docker.io/plexinc/pms-docker:latest@sha256:8b5bcdf7b506fe051aa1a0a0d464efdb3ad8c0fb1f8a4dfb27a8c489b609920c",
+      "linux/arm64": "docker.io/plexinc/pms-docker:latest@sha256:8b5bcdf7b506fe051aa1a0a0d464efdb3ad8c0fb1f8a4dfb27a8c489b609920c"
     }
   },
   "docker.io/vaultwarden/server": {
