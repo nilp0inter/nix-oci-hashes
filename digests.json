@@ -151,6 +151,42 @@
     "2026.3.1": {
       "linux/amd64": "docker.io/homeassistant/home-assistant:2026.3.1@sha256:0e091dfce3068339c3e1d14382e6c34141e05cd589a1972ebd4d9a8e6b5d8969",
       "linux/arm64": "docker.io/homeassistant/home-assistant:2026.3.1@sha256:0e091dfce3068339c3e1d14382e6c34141e05cd589a1972ebd4d9a8e6b5d8969"
+    },
+    "2026.3.2": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.3.2@sha256:572a5d030f652e9ef6c6d4f6631169af83eb3b739c9b4b3965669f5e9d9f3858",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.3.2@sha256:572a5d030f652e9ef6c6d4f6631169af83eb3b739c9b4b3965669f5e9d9f3858"
+    },
+    "2026.3.3": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.3.3@sha256:4c1d99af9fcb666263fff855edc2d1116066faa259f66e6768cee518c8ce3b06",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.3.3@sha256:4c1d99af9fcb666263fff855edc2d1116066faa259f66e6768cee518c8ce3b06"
+    },
+    "2026.3.4": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.3.4@sha256:916682086154a7390114a9788782b8efb199852d4f7d47066722c2bc5d1829e6",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.3.4@sha256:916682086154a7390114a9788782b8efb199852d4f7d47066722c2bc5d1829e6"
+    },
+    "2026.4": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.4@sha256:c1e5f0147f4cb51ccb05bb30b62a1269cc1bd48a6274792d3b38a77ab274dfd2",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.4@sha256:c1e5f0147f4cb51ccb05bb30b62a1269cc1bd48a6274792d3b38a77ab274dfd2"
+    },
+    "2026.4.0": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.4.0@sha256:7fbf6a5e006e889d7799476ad7646bd18e9dc73e8a4ccd9326b41798de6bb3bf",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.4.0@sha256:7fbf6a5e006e889d7799476ad7646bd18e9dc73e8a4ccd9326b41798de6bb3bf"
+    },
+    "2026.4.1": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.4.1@sha256:8848691147f01a6eee7753de2ade21b04d6168fcd2e2a7089f6f84e3b7b86960",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.4.1@sha256:8848691147f01a6eee7753de2ade21b04d6168fcd2e2a7089f6f84e3b7b86960"
+    },
+    "2026.4.2": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.4.2@sha256:4c940155cfd5b0187a6faee2db5d52b98bb573edc1aeee95d0818bb17b6534d7",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.4.2@sha256:4c940155cfd5b0187a6faee2db5d52b98bb573edc1aeee95d0818bb17b6534d7"
+    },
+    "2026.4.3": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.4.3@sha256:ae0800c81fea16bc1241ce03bddb9c6260566e90f58b09d3e5a629e4f68bdc0b",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.4.3@sha256:ae0800c81fea16bc1241ce03bddb9c6260566e90f58b09d3e5a629e4f68bdc0b"
+    },
+    "2026.4.4": {
+      "linux/amd64": "docker.io/homeassistant/home-assistant:2026.4.4@sha256:c1e5f0147f4cb51ccb05bb30b62a1269cc1bd48a6274792d3b38a77ab274dfd2",
+      "linux/arm64": "docker.io/homeassistant/home-assistant:2026.4.4@sha256:c1e5f0147f4cb51ccb05bb30b62a1269cc1bd48a6274792d3b38a77ab274dfd2"
     }
   },
   "docker.io/jellyfin/jellyfin": {
@@ -284,6 +320,18 @@
       "linux/amd64": "docker.io/n8nio/n8n:2.12.2@sha256:1e764de257f2b1eb6fc0e2477bd82cf8f5de9e68b82ac243b1a2db1551426723",
       "linux/arm64": "docker.io/n8nio/n8n:2.12.2@sha256:1e764de257f2b1eb6fc0e2477bd82cf8f5de9e68b82ac243b1a2db1551426723"
     },
+    "2.13.0": {
+      "linux/amd64": "docker.io/n8nio/n8n:2.13.0@sha256:34fd08a7958bcb1e10f0756c58ce83a0df282cff5ddcb295139ac8d0955558e7",
+      "linux/arm64": "docker.io/n8nio/n8n:2.13.0@sha256:34fd08a7958bcb1e10f0756c58ce83a0df282cff5ddcb295139ac8d0955558e7"
+    },
+    "2.13.1": {
+      "linux/amd64": "docker.io/n8nio/n8n:2.13.1@sha256:51dc2bee2e2f20493a86bd7db761e94c7f860c822716f15bc1d52c576ed25b90",
+      "linux/arm64": "docker.io/n8nio/n8n:2.13.1@sha256:51dc2bee2e2f20493a86bd7db761e94c7f860c822716f15bc1d52c576ed25b90"
+    },
+    "2.13.2": {
+      "linux/amd64": "docker.io/n8nio/n8n:2.13.2@sha256:72e962537379dcefeb63a01397a099576e2e89a365f5a75efb8a5ad5bc5cff6a",
+      "linux/arm64": "docker.io/n8nio/n8n:2.13.2@sha256:72e962537379dcefeb63a01397a099576e2e89a365f5a75efb8a5ad5bc5cff6a"
+    },
     "2.2.0": {
       "linux/amd64": "docker.io/n8nio/n8n:2.2.0@sha256:d668889ca1f17367027f52bcee525dfde6d369d6b64be4a66b6fa22cb97f9ff3",
       "linux/arm64": "docker.io/n8nio/n8n:2.2.0@sha256:d668889ca1f17367027f52bcee525dfde6d369d6b64be4a66b6fa22cb97f9ff3"
@@ -385,8 +433,8 @@
       "linux/arm64": "docker.io/n8nio/n8n:2.9.2@sha256:52bc65540cbfb6f8b5320bafaf28bcc018ae08124bb0a7cbf5ca7f044b54d698"
     },
     "nightly": {
-      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:c987f5c81c6f543db8e257d5fbf3901c0592b427cf09b653d7f3d8fc1ed4bc4a",
-      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:c987f5c81c6f543db8e257d5fbf3901c0592b427cf09b653d7f3d8fc1ed4bc4a"
+      "linux/amd64": "docker.io/n8nio/n8n:nightly@sha256:06ac8684b6a52a8fe1caa43b118c614e752113885912452c8e68ca34bcb436ba",
+      "linux/arm64": "docker.io/n8nio/n8n:nightly@sha256:06ac8684b6a52a8fe1caa43b118c614e752113885912452c8e68ca34bcb436ba"
     },
     "stable": {
       "linux/amd64": "docker.io/n8nio/n8n:stable@sha256:a293b89bac876872a0c1ef0fbbb7ce056aa2d215f62917acf032ecb8010199af",
@@ -461,6 +509,18 @@
     "1.35.4": {
       "linux/amd64": "docker.io/vaultwarden/server:1.35.4@sha256:43498a94b22f9563f2a94b53760ab3e710eefc0d0cac2efda4b12b9eb8690664",
       "linux/arm64": "docker.io/vaultwarden/server:1.35.4@sha256:43498a94b22f9563f2a94b53760ab3e710eefc0d0cac2efda4b12b9eb8690664"
+    },
+    "1.35.5": {
+      "linux/amd64": "docker.io/vaultwarden/server:1.35.5@sha256:b0be02bdc08fde3ce253d01be2b5bf9ba0add2ae6f029fbacc096fd65af0a2b8",
+      "linux/arm64": "docker.io/vaultwarden/server:1.35.5@sha256:b0be02bdc08fde3ce253d01be2b5bf9ba0add2ae6f029fbacc096fd65af0a2b8"
+    },
+    "1.35.6": {
+      "linux/amd64": "docker.io/vaultwarden/server:1.35.6@sha256:93072633c6b125628419097fc951d1ce448422a1af1d653805520a8ba90f6956",
+      "linux/arm64": "docker.io/vaultwarden/server:1.35.6@sha256:93072633c6b125628419097fc951d1ce448422a1af1d653805520a8ba90f6956"
+    },
+    "1.35.7": {
+      "linux/amd64": "docker.io/vaultwarden/server:1.35.7@sha256:9a8eec71f4a52411cc43edc7a50f33e9b6f62b5baca0dd95f0c6e7fd60f1a341",
+      "linux/arm64": "docker.io/vaultwarden/server:1.35.7@sha256:9a8eec71f4a52411cc43edc7a50f33e9b6f62b5baca0dd95f0c6e7fd60f1a341"
     }
   },
   "ghcr.io/immich-app/immich-server": {
@@ -579,6 +639,10 @@
     "v2.5.6": {
       "linux/amd64": "ghcr.io/immich-app/immich-server:v2.5.6@sha256:aa163d2e1cc2b16a9515dd1fef901e6f5231befad7024f093d7be1f2da14341a",
       "linux/arm64": "ghcr.io/immich-app/immich-server:v2.5.6@sha256:aa163d2e1cc2b16a9515dd1fef901e6f5231befad7024f093d7be1f2da14341a"
+    },
+    "v2.6.0": {
+      "linux/amd64": "ghcr.io/immich-app/immich-server:v2.6.0@sha256:17c5e557685a0f4c6e92e3e78be80724c00391314586e6cd402061bce4c72d8f",
+      "linux/arm64": "ghcr.io/immich-app/immich-server:v2.6.0@sha256:17c5e557685a0f4c6e92e3e78be80724c00391314586e6cd402061bce4c72d8f"
     }
   },
   "ghcr.io/open-webui/open-webui": {
@@ -662,6 +726,10 @@
       "linux/amd64": "ghcr.io/open-webui/open-webui:0.8@sha256:8113fa5510020ef05a44afc0c42d33eabeeb2524a996e3e3fb8c437c00f0d792",
       "linux/arm64": "ghcr.io/open-webui/open-webui:0.8@sha256:8113fa5510020ef05a44afc0c42d33eabeeb2524a996e3e3fb8c437c00f0d792"
     },
+    "0.9": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:0.9@sha256:a7e4796ae894d1e2a0c1824860ade472f35c507608a01c3581377b5c19b0ed49",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:0.9@sha256:a7e4796ae894d1e2a0c1824860ade472f35c507608a01c3581377b5c19b0ed49"
+    },
     "main": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:main@sha256:c2e4723fdbca5de8f9f0529e22b78acf5bc312a88da730bed88860063d028fe8",
       "linux/arm64": "ghcr.io/open-webui/open-webui:main@sha256:c2e4723fdbca5de8f9f0529e22b78acf5bc312a88da730bed88860063d028fe8"
@@ -706,6 +774,14 @@
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.10@sha256:ee057955040ce91e3e787e4b7978c9c23e828972c68d01d787ed40f9a307df9f",
       "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.10@sha256:ee057955040ce91e3e787e4b7978c9c23e828972c68d01d787ed40f9a307df9f"
     },
+    "v0.8.11": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.11@sha256:a1e098b30bf4e06fe2bac1c7af1282b1c8adccd34aff02f9f7e843ffc257452b",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.11@sha256:a1e098b30bf4e06fe2bac1c7af1282b1c8adccd34aff02f9f7e843ffc257452b"
+    },
+    "v0.8.12": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.12@sha256:8113fa5510020ef05a44afc0c42d33eabeeb2524a996e3e3fb8c437c00f0d792",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.12@sha256:8113fa5510020ef05a44afc0c42d33eabeeb2524a996e3e3fb8c437c00f0d792"
+    },
     "v0.8.2": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.2@sha256:7b7d324724ea4aa95d206362d8e9332544f11be167cd254ff83af9ab75734db8",
       "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.2@sha256:7b7d324724ea4aa95d206362d8e9332544f11be167cd254ff83af9ab75734db8"
@@ -737,6 +813,18 @@
     "v0.8.9": {
       "linux/amd64": "ghcr.io/open-webui/open-webui:v0.8.9@sha256:4320d38874dd6f43fc865209b1d5b1fae903055a7fa56de8c2493bf836f7920a",
       "linux/arm64": "ghcr.io/open-webui/open-webui:v0.8.9@sha256:4320d38874dd6f43fc865209b1d5b1fae903055a7fa56de8c2493bf836f7920a"
+    },
+    "v0.9.0": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.9.0@sha256:eb874c0530209dd5ca21a4d0a7cc42e69f2ee85f0e7b90ae94659cd415c27c6d",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.9.0@sha256:eb874c0530209dd5ca21a4d0a7cc42e69f2ee85f0e7b90ae94659cd415c27c6d"
+    },
+    "v0.9.1": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.9.1@sha256:03d2b006989f0fe6559391a0c5d4ccac12688d7813d23cb4de86e5cc0ab22978",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.9.1@sha256:03d2b006989f0fe6559391a0c5d4ccac12688d7813d23cb4de86e5cc0ab22978"
+    },
+    "v0.9.2": {
+      "linux/amd64": "ghcr.io/open-webui/open-webui:v0.9.2@sha256:a7e4796ae894d1e2a0c1824860ade472f35c507608a01c3581377b5c19b0ed49",
+      "linux/arm64": "ghcr.io/open-webui/open-webui:v0.9.2@sha256:a7e4796ae894d1e2a0c1824860ade472f35c507608a01c3581377b5c19b0ed49"
     }
   },
   "ghcr.io/paperless-ngx/paperless-ngx": {
@@ -799,6 +887,22 @@
     "2.20.10": {
       "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.10@sha256:07a0b4ba01ce377c82a0636e16c0c3d931fde5b7e9304de6601986cc42d9b6e6",
       "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.10@sha256:07a0b4ba01ce377c82a0636e16c0c3d931fde5b7e9304de6601986cc42d9b6e6"
+    },
+    "2.20.11": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.11@sha256:1919ba5edec278e81d2393efc82c97c9e3e18ef9dfcb43fdcfa7359dd3adfe99",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.11@sha256:1919ba5edec278e81d2393efc82c97c9e3e18ef9dfcb43fdcfa7359dd3adfe99"
+    },
+    "2.20.12": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.12@sha256:de559198890b6e56bdb696581d80d1e713cecbea15b775a01c08f728a68ffa91",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.12@sha256:de559198890b6e56bdb696581d80d1e713cecbea15b775a01c08f728a68ffa91"
+    },
+    "2.20.13": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.13@sha256:4b05bcd28e6923768000b5d247cbf2c66fd49bdc3f3b05955bd4f6790a638b01",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.13@sha256:4b05bcd28e6923768000b5d247cbf2c66fd49bdc3f3b05955bd4f6790a638b01"
+    },
+    "2.20.14": {
+      "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.14@sha256:b89f83345532cfba72690185257eb6c4f92fc2a782332a42abe19c07b7a6595f",
+      "linux/arm64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.14@sha256:b89f83345532cfba72690185257eb6c4f92fc2a782332a42abe19c07b7a6595f"
     },
     "2.20.2": {
       "linux/amd64": "ghcr.io/paperless-ngx/paperless-ngx:2.20.2@sha256:8cbd8ce3ef1857bd144026a7e7192d0889188352b5271631e42ff069ccceeb74",
