@@ -336,6 +336,10 @@
       "linux/amd64": "docker.io/n8nio/n8n:2.13.2@sha256:72e962537379dcefeb63a01397a099576e2e89a365f5a75efb8a5ad5bc5cff6a",
       "linux/arm64": "docker.io/n8nio/n8n:2.13.2@sha256:72e962537379dcefeb63a01397a099576e2e89a365f5a75efb8a5ad5bc5cff6a"
     },
+    "2.18.3": {
+      "linux/amd64": "docker.io/n8nio/n8n:2.18.3@sha256:0890ad9581d85479178976cceb150a22507279a09f82f11ab75e5ea5a149a6ef",
+      "linux/arm64": "docker.io/n8nio/n8n:2.18.3@sha256:0890ad9581d85479178976cceb150a22507279a09f82f11ab75e5ea5a149a6ef"
+    },
     "2.2.0": {
       "linux/amd64": "docker.io/n8nio/n8n:2.2.0@sha256:d668889ca1f17367027f52bcee525dfde6d369d6b64be4a66b6fa22cb97f9ff3",
       "linux/arm64": "docker.io/n8nio/n8n:2.2.0@sha256:d668889ca1f17367027f52bcee525dfde6d369d6b64be4a66b6fa22cb97f9ff3"
@@ -647,6 +651,10 @@
     "v2.6.0": {
       "linux/amd64": "ghcr.io/immich-app/immich-server:v2.6.0@sha256:17c5e557685a0f4c6e92e3e78be80724c00391314586e6cd402061bce4c72d8f",
       "linux/arm64": "ghcr.io/immich-app/immich-server:v2.6.0@sha256:17c5e557685a0f4c6e92e3e78be80724c00391314586e6cd402061bce4c72d8f"
+    },
+    "v2.7.5": {
+      "linux/amd64": "ghcr.io/immich-app/immich-server:v2.7.5@sha256:c15bff75068effb03f4355997d03dc7e0fc58720c2b54ad6f7f10d1bc57efaa5",
+      "linux/arm64": "ghcr.io/immich-app/immich-server:v2.7.5@sha256:c15bff75068effb03f4355997d03dc7e0fc58720c2b54ad6f7f10d1bc57efaa5"
     }
   },
   "ghcr.io/open-webui/open-webui": {
